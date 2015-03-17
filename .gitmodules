@@ -1,0 +1,12 @@
+[submodule "fenix_modules/fenix-ui-metadata-editor"]
+	path = fenix_modules/fenix-ui-metadata-editor
+	url = https://github.com/FENIX-Platform/fenix-ui-metadata-editor.git
+[submodule "fenix_modules/fenix-ui-common"]
+	path = fenix_modules/fenix-ui-common
+	url = https://github.com/FENIX-Platform/fenix-ui-common.git
+[submodule "fenix_modules/fenix-ui-menu"]
+	path = fenix_modules/fenix-ui-menu
+	url = https://github.com/FENIX-Platform/fenix-ui-menu.git
+[submodule "fenix_modules/fenix-ui-metadata-viewer"]
+	path = fenix_modules/fenix-ui-metadata-viewer
+	url = https://github.com/FENIX-Platform/fenix-ui-metadata-viewer.git
