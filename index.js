@@ -56,9 +56,8 @@ require(["submodules/fenix-ui-menu/js/paths",
     });
 
 	require([
-	    'jquery', 'underscore', 'bootstrap', 'highcharts', 'jstree', 'handlebars', 'swiper', 'leaflet',
+	    'jquery', 'underscore', 'bootstrap', 'highcharts', 'jstree', 'handlebars', 'swiper',
 	    'text!config/services.json',
-		'text!html/home_maps_legend.html',
 
 		'fx-menu/start',
         'src/components/AuthenticationManager',
@@ -66,15 +65,13 @@ require(["submodules/fenix-ui-menu/js/paths",
         'amplify',
 		
 		'domready!'
-	], function($,_,bts,highcharts,jstree,Handlebars,Swiper,L,
+	], function($,_,bts,highcharts,jstree,Handlebars,Swiper,
 		Config,
-		mapLegend,
 
 		TopMenu, AuthenticationManager
 		) {
 
 		Config = JSON.parse(Config);
-		mapLegendTmpl = Handlebars.compile(mapLegend);
 
 		function getWDS(queryTmpl, queryVars, callback) {
 
@@ -183,17 +180,7 @@ require(["submodules/fenix-ui-menu/js/paths",
 		var mySwiperMap = $('#afo-maps-wrapper').swiper({
 			loop: false,
 			simulateTouch: false,
-			mode: 'vertical',
-			onSwiperCreated: function() {
-				swiperMaps.slide1.invalidateSize();
-                $('#afo-maps-wrapper').find(".map-legend").removeClass("active");
-			},
-			onSlideChangeEnd: function() {
-				swiperMaps.slide1.invalidateSize();
-				swiperMaps.slide2.invalidateSize();
-				swiperMaps.slide3.invalidateSize();
-                $('#afo-maps-wrapper').find(".map-legend").removeClass("active");
-			}
+			mode: 'vertical'
 		});
 		$('.swipe-maps-prev').on('click', function(e) {
 			e.preventDefault();
@@ -208,7 +195,7 @@ require(["submodules/fenix-ui-menu/js/paths",
             $('#afo-maps-wrapper').find(".map-legend[data-legend='"+mySwiperMap.activeIndex+"']").toggleClass("active");
         });
 
-		$('.footer').load('html/footer.html');
+		//$('.footer').load('../html/footer.html');
 
 	});
 
