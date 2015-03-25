@@ -1,0 +1,17 @@
+{
+  "name": "fmd-ui",
+  "version": "0.0.0",
+  "description": "Global Foot and Mouth Disease(FMD) Control Strategy Report Questionnaire",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/FENIX-Platform-Projects/fmd-ui.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/FENIX-Platform-Projects/fmd-ui/issues"
+  }
+}

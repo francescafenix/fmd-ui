@@ -1,0 +1,132 @@
+/* Afo Typography */
+
+
+/* Sansation Font (Africa Fertilizer logo) */
+@font-face {
+  font-family: 'sansationregular';
+  src: url('fonts/sansation-regular-webfont.eot');
+  src: url('fonts/sansation-regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('fonts/sansation-regular-webfont.woff2') format('woff2'),
+  url('fonts/sansation-regular-webfont.woff') format('woff'),
+  url('fonts/sansation-regular-webfont.ttf') format('truetype'),
+  url('fonts/sansation-regular-webfont.svg#sansationregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'sansation_lightlight';
+  src: url('fonts/sansation-light-webfont.eot');
+  src: url('fonts/sansation-light-webfont.eot?#iefix') format('embedded-opentype'),
+  url('fonts/sansation-light-webfont.woff2') format('woff2'),
+  url('fonts/sansation-light-webfont.woff') format('woff'),
+  url('fonts/sansation-light-webfont.ttf') format('truetype'),
+  url('fonts/sansation-light-webfont.svg#sansation_lightlight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.afo-page-subtitle{
+  font-size: 12px;
+  font-weight: 700;
+  color: $afo-green-title;
+  text-transform: uppercase;
+}
+
+.afo-disclaimer{
+  font-weight: 700;
+  font-size: 10px;
+}
+
+.afo-disclaimer-small{
+  font-weight: 300;
+  font-size: 10px;
+}
+
+.afo-big-title{
+  font-size: 32px;
+  font-weight: 100;
+  color: $fenix-text;
+
+}
+
+.afo-title{
+  background-color: $afo-green-title;
+  display: inline-block;
+  font: $fx-text-smalltitle-normal;
+  color: white;
+  padding: 2px 7px;
+  text-transform: uppercase;
+}
+
+.afo-title-blue{
+  background-color: $afo-blue-title;
+  display: inline-block;
+  font: $fx-text-smalltitle-normal;
+  color: white;
+  padding: 2px 7px;
+  text-transform: uppercase;
+}
+
+.afo-title-white{
+  background-color: white;
+  display: inline-block;
+  font: $fx-text-smalltitle-normal;
+  color: $afo-green-title;
+  padding: 2px 7px;
+  text-transform: uppercase;
+}
+
+.afo-title-white.maptitle{
+  font-weight: bold;
+  position: absolute;
+  margin: 0;
+  z-index: 1;
+  top: 15px;
+  left: 15px;
+}
+
+.afo-title-gray{
+  background-color: $afo-hairline;
+  display: inline-block;
+  font: $fx-text-smalltitle-normal;
+  color: $fenix-text;
+  padding: 2px 7px;
+  text-transform: uppercase;
+}
+
+.afo-courtesy-message{
+  color: $afo-hairline;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.afo-date{
+  font-size: 12px;
+  em{
+    font-style: normal;
+    color: $afo-green-title;
+
+  }
+}
+
+.label{
+  display: inline-block;
+}
+
+.afo-attach{
+
+  a{
+    color: $fenix-text;
+    text-decoration: none;
+
+    &:hover{
+      color: $fenix-text;
+      text-decoration: none;
+    }
+  }
+
+
+
+}
