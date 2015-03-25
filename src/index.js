@@ -61,7 +61,7 @@ require(["submodules/fenix-ui-menu/js/paths",
 		'text!html/home_maps_legend.html',
 
 		'fx-menu/start',
-        './scripts/components/AuthenticationManager',
+        'src/components/AuthenticationManager',
 
         'amplify',
 		
@@ -179,125 +179,6 @@ require(["submodules/fenix-ui-menu/js/paths",
            $('.hp-main-swiper-index').html('<span class="swiper-index"><span class="swiper-index-active">'+ (s.activeLoopIndex + 1)+'</span><span class="swiper-index-total"> | '+ (s.slides.length - (s.loopedSlides*2) )+'</span></span>' );
         }
 
-///MAPS SLIDER
-		var swiperMaps = {},
-			mapScales = [{
-				"-1": { color: "#DDDDDD", label: "NC"},
-				"4":  { color: "#F1EEE8", label: "4" },
-				"3":  { color: "#BCD5AB", label: "3" },
-				"2":  { color: "#A5C88E", label: "2" },
-				"1":  { color: "#8DBD70", label: "1" },
-				"0":  { color: "#6AAC46", label: "0" }
-			}, {
-				"-1": { color: "#DDDDDD", label: "NC"},
-				"0":  { color: "#deebf7", label: "0" },
-				"1":  { color: "#c6dbef", label: "1" },
-				"2":  { color: "#9ecae1", label: "2" },
-				"3":  { color: "#6baed6", label: "3" },
-				"4":  { color: "#4292c6", label: "4" },
-				"5":  { color: "#2171b5", label: "5" },
-				"6":  { color: "#08519c", label: "6" },
-				"7":  { color: "#08306b", label: "7" },
-				"8":  { color: "#08306b", label: "8" }
-			}, {
-				"-1": { color: "#DDDDDD", label: "NC"},
-				"0":  { color: "#e0f3db", label: "0" },
-				"1":  { color: "#ccebc5", label: "1" },
-				"2":  { color: "#a8ddb5", label: "2" },
-				"3":  { color: "#A5C88E", label: "3" },
-				"4":  { color: "#7bccc4", label: "4" },
-				"5":  { color: "#4eb3d3", label: "5" },
-				"6":  { color: "#2b8cbe", label: "6" },
-				"7":  { color: "#0868ac", label: "7" },
-				"8":  { color: "#084081", label: "8" },
-				"9":  { color: "#063879", label: "9" }
-			}];	
-
-		$('#mapSlide1').next('.map-legend').append( mapLegendTmpl({values: mapScales[0] }) );
-		$('#mapSlide2').next('.map-legend').append( mapLegendTmpl({values: mapScales[1] }) );
-		$('#mapSlide3').next('.map-legend').append( mapLegendTmpl({values: mapScales[2] }) );
-
-		function setLayerStyle(ccodes, indexMap) {
-			var style = '',
-				sld = '';
-
-			_.each(ccodes, function(val, adm0_code) {
-
-				style += "[adm0_code = '"+adm0_code+"'] { "+
-					"fill: "+mapScales[indexMap][val].color+"; "+
-					"fill-opacity: 0.8; "+
-					"stroke: #FFFFFF; "+
-				"}";
-			});
-
-			$.ajax({
-				url: Config.sldUrl,
-				data: {
-					stylename: "fenix:"+Config.gaulLayer,
-					style: style
-				},
-				async: false,
-				type: 'POST',
-				success: function(response) {
-					sld = response;
-				}
-			});
-			return sld;
-		}
-
-		function getLayerStyled(field, indexMap) {
-
-			var	countriesLayer = L.tileLayer.wms(Config.wmsUrl, {
-				layers: "fenix:"+Config.gaulLayer,
-				format: 'image/png',
-				transparent: true
-			});
-
-			getWDS(Config.queries.home_maps_filter, {field: field }, function(resp) {
-
-				var ccodes = {}, val;
-
-				for(var i in resp)
-					ccodes[ resp[i][0] ] = resp[i][1];
-
-				countriesLayer.wmsParams.sld = setLayerStyle(ccodes, indexMap);
-				countriesLayer.redraw();
-			});
-
-			return countriesLayer;
-		}
-
-		swiperMaps.slide1 = L.map('mapSlide1', {
-			zoom: 3,
-			zoomControl: false,
-			attributionControl: false,
-			center: L.latLng(12,18),
-			layers: L.tileLayer(Config.url_baselayer)
-		})
-		.addControl(L.control.zoom({position:'bottomright'}))
-		.addLayer( getLayerStyled('afo_footprint',0) );
-
-		swiperMaps.slide2 = L.map('mapSlide2', {
-			zoom: 3,
-			zoomControl: false,
-			attributionControl: false,
-			center: L.latLng(12,18),
-			layers: L.tileLayer(Config.url_baselayer)
-		})
-		.addControl(L.control.zoom({position:'bottomright'}))
-		.addLayer( getLayerStyled('manufacturing_plant',1) );
-
-		swiperMaps.slide3 = L.map('mapSlide3', {
-			zoom: 3,
-			zoomControl: false,
-			attributionControl: false,
-			center: L.latLng(12,18),
-			layers: L.tileLayer(Config.url_baselayer)
-		})
-		.addControl(L.control.zoom({position:'bottomright'}))
-		.addLayer( getLayerStyled('blending_plant',2) );
-
-
 		//	SLIDER Maps
 		var mySwiperMap = $('#afo-maps-wrapper').swiper({
 			loop: false,
@@ -329,19 +210,6 @@ require(["submodules/fenix-ui-menu/js/paths",
 
 		$('.footer').load('html/footer.html');
 
-		$('.afo-home-partner-container .nav-tabs')
-			.on('mouseenter','a', _.debounce(function(e) {
-				//$(e.delegateTarget).trigger('mouseout'); 
-				$(e.delegateTarget).next('.tab-content').find('.tab-pane').removeClass('active in');
-				$(e.target).trigger('click');
-			},50))
-			.on('mousedown','a', function(e) {
-				//location.href = $(e.target).attr('href');
-				window.open($(e.target).attr('href'),'_blank');
-			});			
-/*		$('.afo-home-partner-container .nav-tabs .active a').on('click.go', function(e) {
-			location.href = $(e.target).data('link');
-		});*/
 	});
 
 

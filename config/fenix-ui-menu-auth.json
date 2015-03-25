@@ -3,16 +3,16 @@
   "brand": {
     "target": "index.html"
   },
-    "languages": [
-        {
-            "lang": "FR",
-            "label": "Fr"
-        },
-        {
-            "lang": "EN",
-            "label": "En"
-        }
-    ],
+  "languages": [
+    {
+      "lang": "FR",
+      "label": "Fr"
+    },
+      {
+          "lang": "EN",
+          "label": "En"
+      }
+  ],
   "items": [
     {
       "attrs": {
@@ -24,148 +24,19 @@
         "FR": ""
       },
       "breadcrumbLabel": {
-        "EN": "WELCOME TO THE AFRICA FERTILIZER INFORMATION PORTAL",
+        "EN": "Global Foot and Mouth Disease (FMD) Control Strategy",
         "FR": ""
       }
     },
     {
       "attrs": {
-        "id": "statistics"
+        "id": "view"
       },
-      "target": "statistics.html",
+      "target": "view.html",
       "label": {
-        "EN": "Statistics",
+        "EN": "view",
         "FR": ""
-      },
-      "type": "dropdown",
-      "children": [
-                {
-          "attrs": {
-            "id": "statistics_glance"
-          },
-          "target": "statistics_glance.html",
-          "label": {
-            "EN": "At a Glance",
-            "FR": ""
-          }
-        },
-        {
-          "attrs": {
-            "id": "statistics_compare"
-          },
-          "target": "statistics_compare.html",
-          "label": {
-            "EN": "Compare",
-            "FR": ""
-          }
-        }
-      ]      
-    },    
-    {
-      "attrs": {
-        "id": "prices"
-      },
-      "target": "#",
-      "label": {
-        "EN": "Prices",
-        "FR": ""
-      },
-      "type": "dropdown",
-      "children": [
-        {
-          "attrs": {
-            "id": "prices_international"
-          },
-          "target": "prices_international.html",
-          "label": {
-            "EN": "International",
-            "FR": ""
-          }
-        },
-        {
-          "attrs": {
-            "id": "prices_national"
-          },
-          "target": "prices_national.html",
-          "label": {
-            "EN": "National",
-            "FR": ""
-          }
-        },
-        {
-          "attrs": {
-            "id": "prices_detailed"
-          },
-          "target": "prices_detailed.html",
-          "label": {
-            "EN": "Local prices",
-            "FR": ""
-          }
-        }
-      ]
-    },
-    {
-      "attrs": {
-        "id": "directories"
-      },
-      "target": "directories.html",
-      "label": {
-        "EN": "Directories",
-        "FR": ""
-      },
-      "type": "dropdown",
-      "children": [
-        {
-          "attrs": {
-            "id": "directories_business"
-          },
-          "target": "directories_business.html",
-          "label": {
-            "EN": "Business",
-            "FR": ""
-          }
-        },      
-        {
-          "attrs": {
-            "id": "directories_prod"
-          },
-          "target": "directories_prod.html",
-          "label": {
-            "EN": "Production",
-            "FR": ""
-          }
-        }   
-      ]        
-    },
-    {
-      "attrs": {
-        "id": "catalogue"
-      },
-      "target": "catalogue.html",
-      "label": {
-        "EN": "Catalogue",
-        "FR": ""
-      }
-    },    
-    {
-      "attrs": {
-        "id": "publications"
-      },
-      "target": "publications.html",
-      "label": {
-        "EN": "Publications",
-        "FR": ""
-      }
-    },
-    {
-      "attrs": {
-        "id": "events"
-      },
-      "target": "events.html",
-      "label": {
-        "EN": "Events",
-        "FR": ""
-      }
+      }      
     },
     {
       "attrs": {
@@ -176,26 +47,28 @@
         "EN": "About Us",
         "FR": ""
       }
-    },    
+    },
     {
       "attrs": {
-        "id": "createdataset"
+        "id": "manage"
       },
-      "target": "createdataset.html",
+      "target": "manage.html",
       "label": {
-        "EN": "Manager",
+        "EN": "Manage",
         "FR": ""
       }
-    }   
+    }
   ],
-  "rightItems" : [{
+  "rightItems": [
+    {
       "attrs": {
-        "id": "logout",
+        "id": "login",
         "class": "afo-eldorado-icons"
       },
       "label": {
-        "EN": "<span class='icojam_exit_1'></span>",
+        "EN": "<span class='icojam_user'></span>",
         "FR": ""
       }
-    }]
+    }
+  ]
 }
