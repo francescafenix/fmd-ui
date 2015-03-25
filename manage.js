@@ -2,13 +2,13 @@
 /*global require*/
 // relative or absolute path of Components' main.js
 require([
-    '../submodules/fenix-ui-common/js/Compiler',
-    //'../submodules/fenix-ui-DataEditor/js/paths',
-    //'../submodules/fenix-ui-dataUpload/js/paths',
-    //'../submodules/fenix-ui-DSDEditor/js/paths',
-    '../submodules/fenix-ui-metadata-editor/js/paths',
-    //'../submodules/fenix-ui-catalog/js/paths',
-    '../submodules/fenix-ui-menu/js/paths'
+    'submodules/fenix-ui-common/js/Compiler',
+    //'submodules/fenix-ui-DataEditor/js/paths',
+    //'submodules/fenix-ui-dataUpload/js/paths',
+    //'submodules/fenix-ui-DSDEditor/js/paths',
+    'submodules/fenix-ui-metadata-editor/js/paths',
+    //'submodules/fenix-ui-catalog/js/paths',
+    'submodules/fenix-ui-menu/js/paths'
 ], function (Compiler, 
 	//DataEditor,
 	//DataUpload,
@@ -18,22 +18,22 @@ require([
 	Menu) {
 
 //    var dataEditorConfig = DataEditor;
-//    dataEditorConfig['baseUrl'] = '../submodules/fenix-ui-DataEditor/js';
+//    dataEditorConfig['baseUrl'] = 'submodules/fenix-ui-DataEditor/js';
 
 //    var dataUploadConfig = DataUpload;
-//    dataUploadConfig['baseUrl'] = '../submodules/fenix-ui-dataUpload/js/';
+//    dataUploadConfig['baseUrl'] = 'submodules/fenix-ui-dataUpload/js/';
 
 //    var dsdEditorConfig = DSDEditor;
-//    dsdEditorConfig['baseUrl'] = '../submodules/fenix-ui-DSDEditor/js';
+//    dsdEditorConfig['baseUrl'] = 'submodules/fenix-ui-DSDEditor/js';
 
     var metadataEditorConfig = MetadataEditor;
-    metadataEditorConfig['baseUrl'] = '../submodules/fenix-ui-metadata-editor/js/';
+    metadataEditorConfig['baseUrl'] = 'submodules/fenix-ui-metadata-editor/js/';
 /*
     var catalogConfig = Catalog;
-    catalogConfig['baseUrl'] = '../submodules/fenix-ui-catalog/js/';*/
+    catalogConfig['baseUrl'] = 'submodules/fenix-ui-catalog/js/';*/
 
     var menuConfig = Menu;
-    menuConfig['baseUrl'] = '../submodules/fenix-ui-menu/js';
+    menuConfig['baseUrl'] = 'submodules/fenix-ui-menu/js';
 
     Compiler.resolve([metadataEditorConfig, menuConfig],
         {
@@ -45,8 +45,8 @@ require([
                     backbone:   "{FENIX_CDN}/js/backbone/1.1.2/backbone.min",
                     handlebars: "{FENIX_CDN}/js/handlebars/2.0.0/handlebars",
                     amplify :   "{FENIX_CDN}/js/amplify/1.1.2/amplify.min",
-                    config: '../config',
-                    html: '../html'
+                    config: 'config',
+                    html: 'html'
                 },
                 shim: {
                     underscore: {
@@ -70,7 +70,7 @@ require([
     // Bootstrap the application
     require([
         'fx-menu/start',
-        'components/AuthenticationManager',
+        'src/components/AuthenticationManager',
         'fx-editor/start',
         'domReady!'
     ], function (TopMenu, AuthenticationManager, Editor) {
@@ -127,11 +127,11 @@ require([
                 lang: 'EN'
             },
             config: {
-                gui: "./submodules/fenix-ui-metadata-editor/conf/json/fx-editor-gui-config.json",
-                validation: "./submodules/fenix-ui-metadata-editor/conf/json/fx-editor-validation-config.json",
-                jsonMapping: "./submodules/fenix-ui-metadata-editor/conf/json/fx-editor-mapping-config.json",
-                ajaxEventCalls: "./submodules/fenix-ui-metadata-editor/conf/json/fx-editor-ajax-config.json",
-                dates: "./submodules/fenix-ui-metadata-editor/conf/json/fx-editor-dates-config.json"
+                gui: "submodules/fenix-ui-metadata-editor/conf/json/fx-editor-gui-config.json",
+                validation: "submodules/fenix-ui-metadata-editor/conf/json/fx-editor-validation-config.json",
+                jsonMapping: "submodules/fenix-ui-metadata-editor/conf/json/fx-editor-mapping-config.json",
+                ajaxEventCalls: "submodules/fenix-ui-metadata-editor/conf/json/fx-editor-ajax-config.json",
+                dates: "submodules/fenix-ui-metadata-editor/conf/json/fx-editor-dates-config.json"
             }
         };
 
