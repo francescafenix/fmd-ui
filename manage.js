@@ -3,41 +3,20 @@
 // relative or absolute path of Components' main.js
 require([
     'submodules/fenix-ui-common/js/Compiler',
-    //'submodules/fenix-ui-DataEditor/js/paths',
-    //'submodules/fenix-ui-dataUpload/js/paths',
-    //'submodules/fenix-ui-DSDEditor/js/paths',
     'submodules/fenix-ui-metadata-editor/js/paths',
-    //'submodules/fenix-ui-catalog/js/paths',
     'submodules/fenix-ui-menu/js/paths'
 ], function (Compiler, 
-	//DataEditor,
-	//DataUpload,
-	//DSDEditor,
 	MetadataEditor,
-	//Catalog,
 	Menu) {
-
-//    var dataEditorConfig = DataEditor;
-//    dataEditorConfig['baseUrl'] = 'submodules/fenix-ui-DataEditor/js';
-
-//    var dataUploadConfig = DataUpload;
-//    dataUploadConfig['baseUrl'] = 'submodules/fenix-ui-dataUpload/js/';
-
-//    var dsdEditorConfig = DSDEditor;
-//    dsdEditorConfig['baseUrl'] = 'submodules/fenix-ui-DSDEditor/js';
 
     var metadataEditorConfig = MetadataEditor;
     metadataEditorConfig['baseUrl'] = 'submodules/fenix-ui-metadata-editor/js/';
-/*
-    var catalogConfig = Catalog;
-    catalogConfig['baseUrl'] = 'submodules/fenix-ui-catalog/js/';*/
 
     var menuConfig = Menu;
     menuConfig['baseUrl'] = 'submodules/fenix-ui-menu/js';
 
-    Compiler.resolve([metadataEditorConfig, menuConfig],
-        {
-            placeholders:  {"FENIX_CDN": "//fenixapps.fao.org/repository"},
+    Compiler.resolve([metadataEditorConfig, menuConfig], {
+            placeholders: {"FENIX_CDN": "//fenixapps.fao.org/repository"},
             config: {
                 locale: 'en',
                 paths: {
@@ -127,11 +106,11 @@ require([
                 lang: 'EN'
             },
             config: {
-                gui: "submodules/fenix-ui-metadata-editor/conf/json/fx-editor-gui-config.json",
-                validation: "submodules/fenix-ui-metadata-editor/conf/json/fx-editor-validation-config.json",
-                jsonMapping: "submodules/fenix-ui-metadata-editor/conf/json/fx-editor-mapping-config.json",
+                gui: 			"submodules/fenix-ui-metadata-editor/conf/json/fx-editor-gui-config.json",
+                validation: 	"submodules/fenix-ui-metadata-editor/conf/json/fx-editor-validation-config.json",
+                jsonMapping: 	"submodules/fenix-ui-metadata-editor/conf/json/fx-editor-mapping-config.json",
                 ajaxEventCalls: "submodules/fenix-ui-metadata-editor/conf/json/fx-editor-ajax-config.json",
-                dates: "submodules/fenix-ui-metadata-editor/conf/json/fx-editor-dates-config.json"
+                dates: 			"submodules/fenix-ui-metadata-editor/conf/json/fx-editor-dates-config.json"
             }
         };
 
