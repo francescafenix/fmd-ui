@@ -16,7 +16,10 @@ require([
     menuConfig['baseUrl'] = 'submodules/fenix-ui-menu/js';
 
     Compiler.resolve([metadataEditorConfig, menuConfig], {
-            placeholders: {"FENIX_CDN": "//fenixapps.fao.org/repository"},
+            placeholders: {
+            	FENIX_CDN: "//fenixapps.fao.org/repository",
+            	FENIX_CONF_NLS: "../../../config/fenix-ui-metadata-editor/nls"
+            },
             config: {
                 locale: 'en',
                 paths: {
