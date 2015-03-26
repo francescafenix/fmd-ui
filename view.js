@@ -16,10 +16,7 @@ require([
     menuConfig['baseUrl'] = 'submodules/fenix-ui-menu/js';
 
     Compiler.resolve([metadataEditorConfig, menuConfig], {
-            placeholders: {
-            	FENIX_CDN: "//fenixapps.fao.org/repository",
-            	FENIX_CONF_NLS: "../../../config/fenix-ui-metadata-editor/nls"
-            },
+            placeholders: {"FENIX_CDN": "//fenixapps.fao.org/repository"},
             config: {
                 locale: 'en',
                 paths: {
@@ -65,7 +62,7 @@ require([
         authUser ? menuUrl = authMenuConfig : menuUrl = publicMenuConfig;
 
         var topMenu = new TopMenu({
-            active: 'manage',
+            active: 'view',
             url: menuUrl,
             className : 'fx-top-menu',
             breadcrumb : {
@@ -87,7 +84,7 @@ require([
         });
         function refreshMenu(url) {
             topMenu.refresh({
-                active: 'home',
+                active: 'view',
                 url: url,
                 className : 'fx-top-menu',
                 breadcrumb : {
@@ -98,26 +95,6 @@ require([
             })
         }
 
-
-        //Editor Metadata
-        var userConfig = {
-            container: "div#metadataEditorContainer",
-            source: null,
-            resourceType: 'dataset', //dataset, geographic, codelist
-            readOnly: false,
-            widget: {
-                lang: 'EN'
-            },
-            config: {
-                gui: 			"config/fenix-ui-metadata-editor/gui-config.json",
-                validation: 	"submodules/fenix-ui-metadata-editor/conf/json/fx-editor-validation-config.json",
-                jsonMapping: 	"submodules/fenix-ui-metadata-editor/conf/json/fx-editor-mapping-config.json",
-                ajaxEventCalls: "submodules/fenix-ui-metadata-editor/conf/json/fx-editor-ajax-config.json",
-                dates: 			"submodules/fenix-ui-metadata-editor/conf/json/fx-editor-dates-config.json"
-            }
-        };
-
-        this.editor = new Editor().init(userConfig);
 
     });
 });

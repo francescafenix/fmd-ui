@@ -30,16 +30,6 @@
     },
     {
       "attrs": {
-        "id": "view"
-      },
-      "target": "view.html",
-      "label": {
-        "EN": "view",
-        "FR": ""
-      }      
-    },
-    {
-      "attrs": {
         "id": "about_us"
       },
       "target": "about_us.html",
@@ -50,11 +40,21 @@
     },
     {
       "attrs": {
+        "id": "view"
+      },
+      "target": "view.html",
+      "label": {
+        "EN": "REPORT QUESTIONNAIRE",
+        "FR": ""
+      }      
+    },
+    {
+      "attrs": {
         "id": "manage"
       },
       "target": "manage.html",
       "label": {
-        "EN": "Manage",
+        "EN": "COMPILE QUESTIONNAIRE",
         "FR": ""
       }
     }

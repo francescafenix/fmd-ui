@@ -1,0 +1,938 @@
+﻿{
+    "panels": [
+        {
+            "module": "meIdentification",
+            "type": {
+                "name": "label"
+            },
+            "label": {
+                "langProp": "meIdentification",
+                "hint": "Identification"
+            },
+            "properties": {
+                "uid": {
+                    "type": {
+                        "name": "text",
+                        "disabled": true,
+                        "copy": true
+                    },
+                    "label": {
+                        "langProp": "uid",
+                        "hint": "Resource identification code"
+                    },
+                    "info": {
+                        "popover": {
+                            "langProp": "uid"
+                        }
+                    }
+                },
+                "version": {
+                    "type": {
+                        "name": "text",
+                        "disabled": true
+                    },
+                    "label": {
+                        "langProp": "version",
+                        "hint": "Resource version"
+                    },
+                    "info": {
+                        "popover": {
+                            "langProp": "version"
+                        }
+                    }
+                },
+                "language": {
+                    "type": {
+                        "name": "select",
+                        "multi": true
+                    },
+                    "label": {
+                        "langProp": "language",
+                        "hint": "Language(s)"
+                    },
+                    "info": {
+                        "popover": {
+                            "langProp": "language"
+                        }
+                    },
+                    "source": {
+                        "type": {
+                            "name": "CodeList",
+                            "object": "OJCodeList",
+                            "system": "ISO639-2",
+                            "version": "1998"
+                        },
+                        "url": "http://faostat3.fao.org/d3s2/v2/msd/resources/ISO639-2/1998",
+                        "dataroot": "data",
+                        "datafields": {
+                            "defaultCode": "eng",
+                            "code": "code",
+                            "label": "title",
+                            "lang": "title[EN]"
+                        }
+                    }
+                },
+                "languageDetails": {
+                    "type": {
+                        "name": "textarea"
+                    },
+                    "value": {
+                        "multilingual": true
+                    },
+                    "label": {
+                        "langProp": "languageDetails",
+                        "hint": "Language details"
+                    },
+                    "info": {
+                        "popover": {
+                            "langProp": "languageDetails"
+                        }
+                    }
+                },
+                "title": {
+                    "type": {
+                        "name": "text"
+                    },
+                    "value": {
+                        "multilingual": true
+                    },
+                    "label": {
+                        "langProp": "title",
+                        "hint": "Title"
+                    },
+                    "info": {
+                        "popover": {
+                            "langProp": "titleResource"
+                        }
+                    }
+                },
+                "creationDate": {
+                    "type": {
+                        "name": "date"
+                    },
+                    "label": {
+                        "langProp": "creationDate",
+                        "hint": "Creation date"
+                    },
+                    "info": {
+                        "popover": {
+                            "langProp": "creationDate"
+                        }
+                    }
+                },
+                "characterSet": {
+                    "type": {
+                        "name": "select"
+                    },
+                    "label": {
+                        "langProp": "characterSet",
+                        "hint": "Character-set"
+                    },
+                    "source": {
+                        "type": {
+                            "name": "CodeList",
+                            "object": "OJCodeList",
+                            "system": "IANAcharacterSet",
+                            "version": ""
+                        },
+                        "url": "http://faostat3.fao.org/d3s2/v2/msd/resources/uid/IANAcharacterSet",
+                        "dataroot": "data",
+                        "datafields": {
+                            "defaultCode": "106",
+                            "code": "code",
+                            "label": "title",
+                            "lang": "title[EN]"
+                        }
+                    },
+                    "info": {
+                        "popover": {
+                            "langProp": "characterSet"
+                        }
+                    }
+                },
+                "metadataStandardName": {
+                    "type": {
+                        "name": "text"
+                    },
+                    "value": {
+                        "default": "FENIX"
+                    },
+                    "label": {
+                        "langProp": "metadataStandardName",
+                        "hint": "Used metadata standards"
+                    },
+                    "info": {
+                        "popover": {
+                            "langProp": "metadataStandardName"
+                        }
+                    }
+                },
+                "metadataStandardVersion": {
+                    "type": {
+                        "name": "text"
+                    },
+                    "value": {
+                        "default-dependency": {
+                            "field": "metadataStandardName",
+                            "value": "FENIX"
+                        },
+                        "default": "1.0"
+                    },
+                    "label": {
+                        "langProp": "metadataStandardVersion",
+                        "hint": "Version of the metadata standards"
+                    },
+                    "info": {
+                        "popover": {
+                            "langProp": "metadataStandardVersion"
+                        }
+                    }
+                },
+                "metadataLanguage": {
+                    "type": {
+                        "name": "select",
+                        "multi": true
+                    },
+                    "label": {
+                        "langProp": "metadataLanguage",
+                        "hint": "Language(s) used for metadata"
+                    },
+                    "source": {
+                        "type": {
+                            "name": "CodeList",
+                            "object": "OJCodeList",
+                            "system": "ISO639-2",
+                            "version": "1998"
+                        },
+                        "url": "http://faostat3.fao.org/d3s2/v2/msd/resources/ISO639-2/1998",
+                        "dataroot": "data",
+                        "datafields": {
+                            "defaultCode": "eng",
+                            "code": "code",
+                            "label": "title",
+                            "lang": "title[EN]"
+                        }
+                    },
+                    "info": {
+                        "popover": {
+                            "langProp": "metadataLanguage"
+                        }
+                    }
+                },
+                "contacts": {
+                    "typeOriginal": {
+                        "name": "label"
+                    },
+                    "type": {
+                        "name": "clonebutton",
+                        "clone": {
+                            "property": "responsibleParty",
+                            "resetFields":["organization"]
+                        },
+                        "buttons": {
+                            "remove" : {
+                                "langProp": "remove",
+                                "icon": "glyphicon glyphicon-minus"
+                            },
+                            "add" :  {
+                                "langProp": "addContact",
+                                "icon": "glyphicon glyphicon-plus"
+                            },
+                            "show": {
+                                "langProp": "showAllContacts"
+                            }
+                        }
+                    },
+                    "label": {
+                        "langProp": "contacts",
+                        "hint": "Contact(s)"
+                    },
+                    "info": {
+                        "popover": {
+                            "langProp": "contacts"
+                        }
+                    },
+                    "properties": {
+                        "responsibleParty": {
+                            "type": {
+                                "name": "fieldset",
+                                "multi": true,
+                                "labelFields":["organization"]
+                            },
+                            "label": {
+                                "langProp": "responsibleParty",
+                                "hint": "Responsible party"
+                            },
+                            "properties": {
+                                "organization": {
+                                    "type": {
+                                        "name": "text"
+                                    },
+                                    "value": {
+                                        "multilingual": true
+                                    },
+                                    "label": {
+                                        "langProp": "organization",
+                                        "hint": "Organization"
+                                    },
+                                    "info": {
+                                        "popover": {
+                                            "langProp": "organizationResponsible"
+                                        }
+                                    }
+                                },
+                                "organizationUnit": {
+                                    "type": {
+                                        "name": "text"
+                                    },
+                                    "value": {
+                                        "multilingual": true
+                                    },
+                                    "label": {
+                                        "langProp": "organizationUnit",
+                                        "hint": "Organization unit/division"
+                                    },
+                                    "info": {
+                                        "popover": {
+                                            "langProp": "organizationUnit"
+                                        }
+                                    }
+                                },
+                                "pointOfContact": {
+                                    "type": {
+                                        "name": "text"
+                                    },
+                                    "placeholder": {
+                                        "langProp": "titleForenameSurname"
+                                    },
+                                    "label": {
+                                        "langProp": "pointOfContact",
+                                        "hint": "Point of contact"
+                                    },
+                                    "info": {
+                                        "popover": {
+                                            "langProp": "pointOfContact"
+                                        }
+                                    }
+                                },
+                                "position": {
+                                    "type": {
+                                        "name": "text"
+                                    },
+                                    "value": {
+                                        "multilingual": true
+                                    },
+                                    "label": {
+                                        "langProp": "position",
+                                        "hint": "Position"
+                                    },
+                                    "info": {
+                                        "popover": {
+                                            "langProp": "position"
+                                        }
+                                    }
+                                },
+                                "role": {
+                                    "type": {
+                                        "name": "select"
+                                    },
+                                    "label": {
+                                        "langProp": "role",
+                                        "hint": "Role"
+                                    },
+                                    "source": {
+                                        "type": {
+                                            "name": "MultipleChoice",
+                                            "multipleChoice": "ResponsiblePartyRole"
+                                        },
+                                        "url": "http://faostat3.fao.org/d3s2/v2/msd/choices/ResponsiblePartyRole",
+                                        "datafields": {
+                                            "code": "code",
+                                            "label": "EN",
+                                            "lang": "EN"
+                                        }
+                                    },
+                                    "info": {
+                                        "popover": {
+                                            "langProp": "role"
+                                        }
+                                    }
+                                },
+                                "specify": {
+                                    "type": {
+                                        "name": "text"
+                                    },
+                                    "value": {
+                                        "multilingual": true
+                                    },
+                                    "label": {
+                                        "langProp": "specify",
+                                        "hint": "Specify"
+                                    },
+                                    "info": {
+                                        "popover": {
+                                            "langProp": "specify"
+                                        }
+                                    }
+                                },
+                                "contactInfo": {
+                                    "type": {
+                                        "name": "fieldset",
+                                        "subtitle": {
+                                            "langProp": "provideAtLeastOne"
+                                        }
+                                    },
+                                    "label": {
+                                        "langProp": "contactInfo",
+                                        "hint": "Contact information"
+                                    },
+                                    "properties": {
+                                        "phone": {
+                                            "type": {
+                                                "name": "text",
+                                                "input-group": {
+                                                    "icon": "glyphicon glyphicon-phone-alt"
+                                                }
+                                            },
+                                            "label": {
+                                                "langProp": "phone",
+                                                "hint": "Telephone number"
+                                            }
+                                        },
+                                        "address": {
+                                            "type": {
+                                                "name": "text",
+                                                "input-group": {
+                                                    "icon": "glyphicon glyphicon-home"
+                                                }
+                                            },
+                                            "label": {
+                                                "langProp": "address",
+                                                "hint": "Address"
+                                            }
+                                        },
+                                        "emailAddress": {
+                                            "type": {
+                                                "name": "text",
+                                                "input-group": {
+                                                    "text": "@"
+                                                }
+                                            },
+                                            "label": {
+                                                "langProp": "emailAddress",
+                                                "hint": "Email address"
+                                            }
+                                        },
+                                        "hoursOfService": {
+                                            "type": {
+                                                "name": "text"
+                                            },
+                                            "value": {
+                                                "multilingual": true
+                                            },
+                                            "label": {
+                                                "langProp": "hoursOfService",
+                                                "hint": "Hours of service"
+                                            },
+                                            "info": {
+                                                "popover": {
+                                                    "langProp": "hoursOfService"
+                                                }
+                                            }
+                                        },
+                                        "contactInstruction": {
+                                            "type": {
+                                                "name": "text"
+                                            },
+                                            "value": {
+                                                "multilingual": true
+                                            },
+                                            "label": {
+                                                "langProp": "contactInstruction",
+                                                "hint": "Instruction"
+                                            },
+                                            "info": {
+                                                "popover": {
+                                                    "langProp": "contactInstruction"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "noDataValue": {
+                    "type": {
+                        "name": "text"
+                    },
+                    "label": {
+                        "langProp": "noDataValue",
+                        "hint": "Value assigned to No-data"
+                    },
+                    "info": {
+                        "popover": {
+                            "langProp": "noDataValue"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "module": "meContent",
+            "type": {
+                "name": "label"
+            },
+            "label": {
+                "langProp": "meContent",
+                "hint": "Content"
+            },
+            "properties": {
+                "resourceRepresentationType": {
+                    "type": {
+                        "name": "select"
+                    },
+                    "label": {
+                        "langProp": "resourceRepresentationType",
+                        "hint": "Type of resource"
+                    },
+                    "source": {
+                        "type": {
+                            "name": "MultipleChoice",
+                            "multipleChoice": "RepresentationType"
+                        },
+                        "url": "http://faostat3.fao.org/d3s2/v2/msd/choices/RepresentationType",
+                        "datafields": {
+                            "defaultCode": "dataset",
+                            "code": "code",
+                            "label": "EN",
+                            "lang": "EN"
+                        }
+                    },
+                    "info": {
+                        "popover": {
+                            "langProp": "resourceRepresentationType"
+                        }
+                    }
+                },
+                "keywords": {
+                    "type": {
+                        "name": "sequence"
+                    },
+                    "placeholder": {
+                        "langProp": "typeThenEnter"
+                    },
+                    "label": {
+                        "langProp": "keywords",
+                        "hint": "Keywords"
+                    },
+                    "info": {
+                        "popover": {
+                            "langProp": "keywords"
+                        }
+                    }
+                },
+                "description": {
+                    "type": {
+                        "name": "textarea",
+                        "rows": "10"
+                    },
+                    "value": {
+                        "multilingual": true
+                    },
+                    "label": {
+                        "langProp": "description",
+                        "hint": "Abstract"
+                    },
+                    "info": {
+                        "remote-html": {
+                            "langProp": "description"
+                        }
+                    }
+                },
+                "statisticalConceptsDefinitions": {
+                    "type": {
+                        "name": "textarea"
+                    },
+                    "value": {
+                        "multilingual": true
+                    },
+                    "label": {
+                        "langProp": "statisticalConceptsDefinitions",
+                        "hint": "Statistical concepts/definitions"
+                    },
+                    "info": {
+                        "remote-html": {
+                            "langProp": "statisticalConceptsDefinitions"
+                        }
+                    }
+                }
+            },
+            "modules": [
+                {
+                    "module": "seReferencePopulation",
+                    "resourceType": [
+                        "dataset",
+                        "geographic"
+                    ],
+                    "type": {
+                        "name": "label"
+                    },
+                    "label": {
+                        "langProp": "seReferencePopulation",
+                        "hint": "Reference Population"
+                    },
+                    "info": {
+                        "popover": {
+                            "langProp": "seReferencePopulation"
+                        }
+                    },
+                    "icon": "fa fa-calendar fa-lg fa-fw",
+                    "properties": {
+                        "statisticalPopulation": {
+                            "type": {
+                                "name": "textarea"
+                            },
+                            "resourceType": [
+                                "dataset"
+                            ],
+                            "value": {
+                                "multilingual": true
+                            },
+                            "label": {
+                                "langProp": "statisticalPopulation",
+                                "hint": "Statistical population"
+                            },
+                            "info": {
+                                "popover": {
+                                    "langProp": "statisticalPopulation"
+                                }
+                            }
+                        },
+                        "statisticalUnit": {
+                            "type": {
+                                "name": "text"
+                            },
+                            "resourceType": [
+                                "dataset"
+                            ],
+                            "value": {
+                                "multilingual": true
+                            },
+                            "label": {
+                                "langProp": "statisticalUnit",
+                                "hint": "Statistical unit"
+                            },
+                            "info": {
+                                "popover": {
+                                    "langProp": "statisticalUnit"
+                                }
+                            }
+                        },
+                        "referencePeriod": {
+                            "type": {
+                                "name": "select"
+                            },
+                            "label": {
+                                "langProp": "referencePeriod",
+                                "hint": "Period of reference"
+                            },
+                            "source": {
+                                "type": {
+                                    "name": "CodeList",
+                                    "object": "OJCodeList",
+                                    "system": "FAO_Period",
+                                    "version": "1.0"
+                                },
+                                "url": "http://faostat3.fao.org/d3s2/v2/msd/resources/FAO_Period/1.0",
+                                "dataroot": "data",
+                                "datafields": {
+                                    "code": "code",
+                                    "label": "title",
+                                    "lang": "title[EN]"
+                                }
+                            },
+                            "info": {
+                                "popover": {
+                                    "langProp": "referencePeriod"
+                                }
+                            }
+                        },
+                        "referenceArea": {
+                            "type": {
+                                "name": "select"
+                            },
+                            "resourceType": [
+                                "dataset"
+                            ],
+                            "label": {
+                                "langProp": "referenceArea",
+                                "hint": "Area of reference"
+                            },
+                            "source": {
+                                "type": {
+                                    "name": "CodeList",
+                                    "object": "OJCodeList",
+                                    "system": "GAUL_ReferenceArea",
+                                    "version": "1.0"
+                                },
+                                "url": "http://faostat3.fao.org/d3s2/v2/msd/resources/GAUL_ReferenceArea/1.0",
+                                "dataroot": "data",
+                                "datafields": {
+                                    "code": "code",
+                                    "label": "title",
+                                    "lang": "title[EN]"
+                                }
+                            },
+                            "info": {
+                                "remote-html": {
+                                    "langProp": "referenceArea"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "module": "seCoverage",
+                    "label": {
+                        "langProp": "seCoverage",
+                        "hint": "Coverage"
+                    },
+                    "icon": "fa fa-rss-square fa-lg fa-fw",
+                    "info": {
+                        "remote-html": {
+                            "langProp": "seCoverage"
+                        }
+                    },
+                    "properties": {
+                        "coverageSectors": {
+                            "type": {
+                                "name": "hierarchy",
+                                "multi": true
+                            },
+                            "label": {
+                                "langProp": "coverageSectors",
+                                "hint": "Main sector(s) (coded)"
+                            },
+                            "source": {
+                                "type": {
+                                    "name": "CodeList",
+                                    "object": "OJCodeList",
+                                    "system": "CRS_purpose_codes",
+                                    "version": ""
+                                },
+                                "url": "http://faostat3.fao.org/d3s2/v2/msd/resources/uid/CRS_purpose_codes",
+                                "dataroot": "data",
+                                "hierarchy": {
+                                    "levels": 2,
+                                    "data": [
+                                        {
+                                            "level": {
+                                                "value": "1",
+                                                "parent": true
+                                            }
+                                        },
+                                        {
+                                            "level": {
+                                                "value": "1",
+                                                "parent": "1",
+                                                "children": true
+                                            }
+                                        }
+                                    ]
+                                },
+                                "datafields": {
+                                    "sort": false,
+                                    "level": "level",
+                                    "children": "children",
+                                    "code": "code",
+                                    "label": "title",
+                                    "lang": "title[EN]"
+                                }
+                            },
+                            "info": {
+                                "popover": {
+                                    "langProp": "coverageSectors"
+                                }
+                            }
+                        },
+                        "coverageSectorsDetails": {
+                            "type": {
+                                "name": "textarea"
+                            },
+                            "value": {
+                                "multilingual": true
+                            },
+                            "label": {
+                                "langProp": "coverageSectorsDetails",
+                                "hint": "Main sector(s)"
+                            },
+                            "info": {
+                                "remote-html": {
+                                    "langProp": "coverageSectorsDetails"
+                                }
+                            }
+                        },
+                        "coverageTime": {
+                            "type": {
+                                "name": "period"
+                            },
+                            "label": {
+                                "langProp": "coverageTime",
+                                "hint": "Coverage time"
+                            },
+                            "info": {
+                                "popover": {
+                                    "langProp": "coverageTime"
+                                }
+                            }
+                        },
+                        "coverageGeographic": {
+                            "type": {
+                                "name": "select",
+                                "multi": true
+                            },
+                            "label": {
+                                "langProp": "coverageGeographic",
+                                "hint": "Geographic extent"
+                            },
+                            "source": {
+                                "type": {
+                                    "name": "CodeList",
+                                    "object": "OJCodeList",
+                                    "system": "GAUL0",
+                                    "version": "2014"
+                                },
+                                "url": "http://faostat3.fao.org/d3s2/v2/msd/resources/GAUL0/2014",
+                                "dataroot": "data",
+                                "datafields": {
+                                    "code": "code",
+                                    "label": "title",
+                                    "lang": "title[EN]"
+                                }
+                            },
+                            "info": {
+                                "remote-html": {
+                                    "langProp": "coverageGeographic"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "module": "seCodeList",
+                    "resourceType": [
+                        "codelist"
+                    ],
+                    "type": {
+                        "name": "label"
+                    },
+                    "label": {
+                        "langProp": "seCodeList",
+                        "hint": "Codelist"
+                    },
+                    "info": {
+                        "popover": {
+                            "langProp": "seCodeList"
+                        }
+                    },
+                    "icon": "fa fa-database fa-lg fa-fw",
+                    "properties": {
+                        "numberOfLevels": {
+                            "type": {
+                                "name": "text"
+                            },
+                            "label": {
+                                "langProp": "numberOfLevels",
+                                "hint": "Number of levels"
+                            },
+                            "info": {
+                                "popover": {
+                                    "langProp": "numberOfLevels"
+                                }
+                            }
+                        },
+                        "typeOfCodeList": {
+                            "type": {
+                                "name": "select"
+                            },
+                            "label": {
+                                "langProp": "typeOfCodeList",
+                                "hint": "Type of codelist"
+                            },
+                            "source": {
+                                "type": {
+                                    "name": "multipleChoice",
+                                    "multipleChoice": "CodeListType"
+                                },
+                                "url": "http://faostat3.fao.org/d3s2/v2/msd/choices/CodeListType",
+                                "datafields": {
+                                    "code": "code",
+                                    "label": "EN",
+                                    "lang": "EN"
+                                }
+                            },
+                            "info": {
+                                "popover": {
+                                    "langProp": "typeOfCodeList"
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "module": "meInstitutionalMandate",
+            "resourceType": [
+                "dataset",
+                "geographic"
+            ],
+            "type": {
+                "name": "label"
+            },
+            "label": {
+                "langProp": "meInstitutionalMandate",
+                "hint": "Institutional Mandate"
+            },
+            "properties": {
+                "legalActsAgreements": {
+                    "type": {
+                        "name": "textarea",
+                        "rows": "10"
+                    },
+                    "value": {
+                        "multilingual": true
+                    },
+                    "label": {
+                        "langProp": "legalActsAgreements",
+                        "hint": "Legal acts/agreements"
+                    },
+                    "info": {
+                        "popover": {
+                            "langProp": "legalActsAgreements"
+                        }
+                    }
+                },
+                "institutionalMandateDataSharing": {
+                    "type": {
+                        "name": "textarea"
+                    },
+                    "value": {
+                        "multilingual": true
+                    },
+                    "label": {
+                        "langProp": "institutionalMandateDataSharing",
+                        "hint": "Data sharing arrangements"
+                    },
+                    "info": {
+                        "popover": {
+                            "langProp": "institutionalMandateDataSharing"
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

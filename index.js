@@ -104,15 +104,6 @@ require(["submodules/fenix-ui-menu/js/paths",
 			});
 		}
 
-//        $(window).bind("load resize", function(){
-//            var container_width = $('#afo-facebook-widget').width();
-//            $('#afo-facebook-widget').html('<div class="fb-like-box" ' +
-//                'data-href="https://www.facebook.com/AfricaFertilizer.org"' +
-//                ' data-width="' + container_width + '" data-height="250" data-show-faces="false" ' +
-//                'data-stream="true" data-header="true"></div>');
-//            FB.XFBML.parse( );
-//        });
-
         var authUser = amplify.store.sessionStorage('afo.security.user'),
             menuUrl,
             publicMenuConfig = 'config/fenix-ui-menu.json',
@@ -153,7 +144,7 @@ require(["submodules/fenix-ui-menu/js/paths",
                 }
             })
         }
-
+/*
         //HIGLIGHTS SLIDER
 		var swiperHigh = $('#afo-high-wrapper').swiper({
 			loop: true,
@@ -194,7 +185,7 @@ require(["submodules/fenix-ui-menu/js/paths",
         $('#afo-maps-legend-btn').on('click', function() {
             $('#afo-maps-wrapper').find(".map-legend[data-legend='"+mySwiperMap.activeIndex+"']").toggleClass("active");
         });
-
+*/
 		//$('.footer').load('../html/footer.html');
 
 	});
