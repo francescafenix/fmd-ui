@@ -106,11 +106,11 @@ require([
                 lang: 'EN'
             },
             config: {
-                gui: 			"submodules/fenix-ui-metadata-editor/conf/json/fx-editor-gui-config.json",
-                validation: 	"submodules/fenix-ui-metadata-editor/conf/json/fx-editor-validation-config.json",
-                jsonMapping: 	"submodules/fenix-ui-metadata-editor/conf/json/fx-editor-mapping-config.json",
-                ajaxEventCalls: "submodules/fenix-ui-metadata-editor/conf/json/fx-editor-ajax-config.json",
-                dates: 			"submodules/fenix-ui-metadata-editor/conf/json/fx-editor-dates-config.json"
+                gui: 			"config/fx-editor-gui-config.json",
+                validation: 	"config/fx-editor-validation-config.json",
+                jsonMapping: 	"config/fx-editor-mapping-config.json",
+                ajaxEventCalls: "config/fx-editor-ajax-config.json",
+                dates: 			"config/fx-editor-dates-config.json"
             }
         };
 
