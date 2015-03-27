@@ -16,6 +16,23 @@ body{
 
 }
 
+.container{
+  background-color: white;
+}
+
+
+
+.contact-information{
+  border: 1px solid $fenix-hr;
+  @include fx-border-radius(3px);
+  padding: 15px;
+
+  h3{
+    margin-top: 0;
+  }
+
+}
+
 // Buttons
 
 .btn{
