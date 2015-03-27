@@ -36,7 +36,11 @@
       "label": {
         "EN": "About Us",
         "FR": ""
-      }
+      },
+      "breadcrumbLabel": {
+        "EN": "About Us",
+        "FR": ""
+      }  
     },
     {
       "attrs": {
@@ -66,7 +70,7 @@
         "class": "afo-eldorado-icons"
       },
       "label": {
-        "EN": "<span class='icojam_user'></span>",
+        "EN": "Guest &bull; LOGOUT <span class='icojam_user'></span>",
         "FR": ""
       }
     }

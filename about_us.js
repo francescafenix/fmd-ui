@@ -112,7 +112,7 @@ require(["submodules/fenix-ui-menu/js/paths",
         authUser ? menuUrl = authMenuConfig : menuUrl = publicMenuConfig;
 
         var topMenu = new TopMenu({
-            active: 'home',        	
+            active: 'about_us',        	
             url: menuUrl,
             className : 'fx-tomapLegendTmplp-menu',
             breadcrumb : {
