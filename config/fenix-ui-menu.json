@@ -41,16 +41,6 @@
         "EN": "About Us",
         "FR": ""
       }      
-    },    
-    {
-      "attrs": {
-        "id": "view"
-      },
-      "target": "view.html",
-      "label": {
-        "EN": "REPORT QUESTIONNAIRE",
-        "FR": ""
-      }      
     }
   ],
   "rightItems": [

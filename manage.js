@@ -54,6 +54,7 @@ require([
         'fx-menu/start',
         'src/components/AuthenticationManager',
         'fx-editor/start',
+        'amplify',
         'domReady!'
     ], function (TopMenu, AuthenticationManager, Editor) {
 
@@ -87,7 +88,7 @@ require([
         });
         function refreshMenu(url) {
             topMenu.refresh({
-                active: 'home',
+                active: 'manage',
                 url: url,
                 className : 'fx-top-menu',
                 breadcrumb : {
@@ -97,7 +98,6 @@ require([
                 }
             })
         }
-
 
         //Editor Metadata
         var userConfig = {
@@ -110,14 +110,14 @@ require([
             },
             config: {
                 gui: 			"config/fenix-ui-metadata-editor/gui-config.json",
+                jsonMapping: 	"config/fenix-ui-metadata-editor/mapping-config.json",
                 validation: 	"submodules/fenix-ui-metadata-editor/conf/json/fx-editor-validation-config.json",
-                jsonMapping: 	"submodules/fenix-ui-metadata-editor/conf/json/fx-editor-mapping-config.json",
                 ajaxEventCalls: "submodules/fenix-ui-metadata-editor/conf/json/fx-editor-ajax-config.json",
                 dates: 			"submodules/fenix-ui-metadata-editor/conf/json/fx-editor-dates-config.json"
             }
         };
 
-        this.editor = new Editor().init(userConfig);
+        this.editor = new Editor().init( userConfig );
 
     });
 });

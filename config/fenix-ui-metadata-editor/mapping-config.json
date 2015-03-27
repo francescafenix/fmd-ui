@@ -1,0 +1,35 @@
+{
+    "obj-path-mapping":
+    {
+        "OJCodeList": {
+            "path": "codes",
+            "system": {
+                "path": "idCodeList"
+            },
+            "version": {
+                "path": "version"
+            },
+            "code": {
+                "path" : "code"
+            }
+        }
+    },
+    "path-mapping": [
+		{"entity": "me1", "path": "root"},
+		{"entity": "me2", "path": "root"},
+		{"entity": "me3", "path": "root"},
+		{"entity": "me4", "path": "root"},
+		{"entity": "me5", "path": "root"},
+		{"entity": "me6", "path": "root"},
+		{"entity": "me7", "path": "root"},
+		{"entity": "me8", "path": "root"},
+		{"entity": "me9", "path": "root"},
+		{"entity": "me10", "path": "root"},
+		{"entity": "me11", "path": "root"},
+		{"entity": "me12", "path": "root"},
+		{"entity": "me13", "path": "root"},
+		{"entity": "me14", "path": "root"},
+		{"entity": "me15", "path": "root"},
+		{"entity": "me16", "path": "root"}
+    ]
+}

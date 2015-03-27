@@ -1,5 +1,48 @@
 define({
     "root": {
+    
+		"me1": "GENERAL INFORMATION",
+		"ask1": "1) Has your country identified a list of Priority Transboundary Animal Diseases (TAD)?",
+		"ask1a": "If yes, list the 5 highest priority diseases",
+
+		"me2": "LIVESTOCK POPULATION",
+		"ask2": "2) Please, provide information on population of FMD-susceptible livestock and wild life in your country? (Multiple answer, fill in the boxes)",
+
+		"me3": "FARM REGISTER",
+		"ask3": "3) Is there an official livestock establishment registration system in your country?",
+
+		"me4": "ANIMAL IDENTIFICATION",
+		"ask4": "4) Is there an official system of animal identification and registration?",
+
+		"me5": "ANIMAL MOVEMENTS",
+		"ask5": "5) Is animal movement monitored?",
+		"ask6": "6) Are data routinely collected on the number, origin and destination of livestock traded?",
+
+		"me6": "FMD OUTBREAKS",
+		"ask7": "7) Number of FMD outbreaks detected in your country since 2012: (An outbreak is defined as a FMD case in an epi-unit (farm, village, dip-tank location) with FMD clinical signs of FMD. It does not refer to the number of animals affected within an epi-unit.)",
+		"ask8": "8) Is there a laboratory specialized in FMD diagnosis in your country?",
+		"ask9": "9) When an outbreak of FMD is notified, is an outbreak investigation conducted?",
+		"ask10": "10) What activities are undertaken during an outbreak investigation",
+		"ask11": "11) What additional control measures are applied when an outbreak occurs in your country?",
+		"ask12": "12) Has your country adopted legislation to enforce/support these measures?",
+		"ask13": "13) Does your country have a written and government endorsed FMD Contingency Plan?",
+		"ask14": "14) If yes, has your country implemented or exercised the FMD Contingency Plan within the last 12 months?",
+		"ask15": "15) Is the written FMD Contingency Plan available for our review?",
+
+		"me7": "IDENTIFICATION OF RISK FACTORS AND HOTSPOTS",
+		"ask16": "16) Has your country determined the risk factors for FMD?",
+		"ask17": "17) Has your country determined risk hotspots for FMD?",
+
+		"me8": "FMD CONTROL",
+		"me9": "SOCIO-ECONOMIC IMPACT",
+		"me10": "SEROSURVEILLANCE",
+		"me11": "VACCINATION",
+		"me12": "EPIDEMIOLOGY AND LABORATORY NETWORKS",
+		"me13": "ACTIVITIES TO COMBINE FMD AND OTHER DISEASES CONTROL",
+		"me14": "CHALLENGES",
+		"me15": "GLOBAL FMD PORTFOLIO",
+		"me16": "POINT OF CONTACT",
+
         "meIdentification": "GENERAL INFORMATION",
         "uid": "Resource identification code",
         "version": "Resource version",
@@ -205,6 +248,7 @@ define({
         "denominatorOfFlatteningRatio": "Denominator of flattening rate",
         "datum": "Datum",
         "datumName": "Name of datum"
+        //*/
     },
     "fr": true
 });

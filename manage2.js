@@ -54,9 +54,7 @@ require([
         'fx-menu/start',
         'src/components/AuthenticationManager',
         'fx-editor/start',
-        
         'amplify',
-
         'domReady!'
     ], function (TopMenu, AuthenticationManager, Editor) {
 
@@ -68,7 +66,7 @@ require([
         authUser ? menuUrl = authMenuConfig : menuUrl = publicMenuConfig;
 
         var topMenu = new TopMenu({
-            active: 'view',
+            active: 'manage',
             url: menuUrl,
             className : 'fx-top-menu',
             breadcrumb : {
@@ -90,7 +88,7 @@ require([
         });
         function refreshMenu(url) {
             topMenu.refresh({
-                active: 'view',
+                active: 'manage',
                 url: url,
                 className : 'fx-top-menu',
                 breadcrumb : {
@@ -101,6 +99,26 @@ require([
             })
         }
 
+
+        //Editor Metadata
+        var userConfig = {
+            container: "div#metadataEditorContainer",
+            source: null,
+            resourceType: 'dataset', //dataset, geographic, codelist
+            readOnly: false,
+            widget: {
+                lang: 'EN'
+            },
+            config: {
+                gui: 			"config/fenix-ui-metadata-editor/gui-config.json",
+                validation: 	"submodules/fenix-ui-metadata-editor/conf/json/fx-editor-validation-config.json",
+                jsonMapping: 	"submodules/fenix-ui-metadata-editor/conf/json/fx-editor-mapping-config.json",
+                ajaxEventCalls: "submodules/fenix-ui-metadata-editor/conf/json/fx-editor-ajax-config.json",
+                dates: 			"submodules/fenix-ui-metadata-editor/conf/json/fx-editor-dates-config.json"
+            }
+        };
+
+        this.editor = new Editor().init(userConfig);
 
     });
 });

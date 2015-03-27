@@ -44,21 +44,11 @@
     },
     {
       "attrs": {
-        "id": "view"
-      },
-      "target": "view.html",
-      "label": {
-        "EN": "REPORT QUESTIONNAIRE",
-        "FR": ""
-      }      
-    },
-    {
-      "attrs": {
         "id": "manage"
       },
       "target": "manage.html",
       "label": {
-        "EN": "COMPILE QUESTIONNAIRE",
+        "EN": "Compile Questionnaire",
         "FR": ""
       }
     }

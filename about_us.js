@@ -134,7 +134,7 @@ require(["submodules/fenix-ui-menu/js/paths",
         });
         function refreshMenu(url) {
             topMenu.refresh({
-                active: 'home',
+                active: 'about_us',
                 url: url,
                 className : 'fx-top-menu',
                 breadcrumb : {

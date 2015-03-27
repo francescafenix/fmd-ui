@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <title>GLOBAL FMD CONTROL STRATEGY REPORT QUESTIONNAIRE</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <meta name="description" content="FENIX Structure">
+    
+    <!-- Third Party CSS -->
+    <link href="//fenixapps.fao.org/repository/js/bootstrap/3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/iThing-min.css" rel="stylesheet" />
+    <link href="css/jqwidgets/styles/jqx.base.css" type="text/css" rel="stylesheet" />
+
+    <link href="//cdn.jsdelivr.net/bootstrap.tagsinput/0.4.2/bootstrap-tagsinput.css" rel="stylesheet" />
+    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="//cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css" rel="stylesheet" />
+    <link href="css/formprogress.css" rel="stylesheet" />
+    <link href="//fenixapps.fao.org/repository/js/jqwidgets/3.1/styles/jqx.base.css" rel="stylesheet" />
+	<link href="//fenixapps.fao.org/repository/js/nprogress/0.1.6/nprogress.css" rel="stylesheet" />
+
+    <!-- FENIX CSS -->
+    <link rel="stylesheet" href="submodules/fenix-ui-common/css/fenix-style.css">
+
+    <link rel="stylesheet" href="submodules/fenix-ui-metadata-editor/css/pnotify.css"/>
+    <link rel="stylesheet" href="submodules/fenix-ui-DSDEditor/css/fenix-ui-DSDEditor.css" type="text/css" />
+    <link rel="stylesheet" href="submodules/fenix-ui-metadata-editor/css/fenix-metadata-editor.css"/>
+
+    <!-- <link rel="stylesheet" href="css/host.css"> -->
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+      <div class="col-xs-12">
+          <div id="breadcumb_container"></div>
+      </div>
+  </div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-6">
+
+			<div class="panel panel-default">
+			<div class="panel-heading" role="tab" id="headingOne">
+			  <h4 class="panel-title">
+			    <a data-toggle="collapse" data-parent="#accordion" href="#collapse_1" aria-expanded="true" aria-controls="collapseOne">
+			    	GENERAL INFORMATION
+			    </a>
+			  </h4>
+			</div>
+			<div id="collapse_1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+			  <div class="panel-body">
+			    {{#each items}}
+			    	<span class="col-xs-4 text-nowrap">{{this}}</span> 
+				{{/each}}
+			  </div>
+			</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+
+
+<div class="container">
+    <!-- FOOTER -->
+    <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+
+        <p>2014 FENIX · <a href="#">Terms</a></p>
+    </footer>
+
+</div>
+
+<script data-main="manage" src="//fenixapps.fao.org/repository/js/requirejs/2.1.15/require.min.js"></script>
+</body>
+</html>
