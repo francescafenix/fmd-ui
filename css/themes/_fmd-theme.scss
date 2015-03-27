@@ -1,0 +1,215 @@
+/* AFO Theme */
+
+html {
+  background-color: $custom-color1;
+}
+
+body{
+  border-top: $host-menu-height solid $custom-color1;
+  background-color: $custom-color1;
+  color: $fenix-text;
+}
+
+
+
+.obj-box {
+
+}
+
+// Buttons
+
+.btn{
+  background-color:transparent;
+  color: $fx-cool-blue;
+  border-color: $fx-cool-blue;
+  @include fx-border-radius(0);
+  font-weight: 500;
+  padding: 3px 12px;
+  border-width: 2px;
+  text-transform: uppercase;
+
+  &:hover{
+    background-color: transparent;
+    color: $fx-cool-blue;
+    border-color: $fx-cool-blue;
+  }
+  &:active{
+    background-color: transparent;
+    color: $fx-cool-blue;
+    border-color: $fx-cool-blue;
+    @include fx-box-shadow(0, 0, 0, white);
+  }
+
+}
+
+.open > .dropdown-toggle.btn-default{
+  background-color: transparent;
+  color: $fx-cool-blue;
+  border-color: $fx-cool-blue;
+}
+
+
+.btn[disabled]{
+  background-color:transparent;
+  color: $fenix-text;
+  border-color: $fenix-text;
+  @include fx-border-radius(0);
+  font-weight: 300;
+  padding: 3px 12px;
+}
+
+.fx-button-reset{
+  border-color:transparent  ;
+}
+
+.white-inverted{
+  background-color: transparent;
+  border-color: white;
+  color: white;
+}
+
+
+.page-header{
+  margin: 0;
+  border-bottom: none;
+  h2{
+    margin-top: 5px;
+  }
+
+  p{
+    text-align: left;
+  }
+}
+
+
+
+table{
+  border-collapse: separate;
+}
+
+/* Page Directories */
+
+
+/* Directories */
+
+#listCompanies .tabCompany {
+  clear: both;
+  margin: 10px 0 40px 0;
+  background-color: #fff;
+  border: none;
+  display: none;
+}
+
+#listCompanies .tabCompany td {
+  padding: 5px;
+}
+
+#listCompanies .companyName {
+  font-weight: bold;
+}
+
+/* TABS  */
+
+/* Page Prices */
+/*#aggregator ,*/
+#renderer
+{
+  display: block;
+}
+
+#chaudgraph,
+#chaudagg {
+  display: none;
+}
+
+
+.gt-row-over td {
+  cursor: default;
+  border-bottom: 1px solid transparent;
+  background-color: #DDF3C2;
+}
+
+
+
+/* Leaflet */
+
+.leaflet-popup-content {
+  margin: 8px 16px;
+}
+
+.fm-popup-join-content {
+  font-size: 14px;
+}
+
+#powerTip {
+  z-index: 1000;
+}
+
+.loader-default {
+  background: url('../img/ajax-loader-default.gif') no-repeat top left;
+  padding-left: 40px;
+  min-height: 40px;
+  line-height: 40px;
+  vertical-align: middle;
+}
+.loader-xs {
+  background: url('../img/ajax-loader-xs.gif') no-repeat top left;
+  padding-left: 16px;
+  min-height: 16px;
+  line-height: 16px;
+  vertical-align: middle;
+}
+
+#legendFamilies {
+  padding: 5px 0;
+  margin: 0;
+  list-style: none;
+  text-align: right;
+}
+
+#legendFamilies li {
+  text-align: center;
+  margin: 0 2px 0 0;
+  font-size: 14px;
+  width: 10%;
+  display: inline-block;
+}
+
+
+
+.panel-title a:hover {
+  text-decoration: none;
+}
+
+
+
+
+
+/* Tables */
+
+
+thead{
+  font-style: normal;
+  font-weight: normal ;
+}
+
+
+
+.table {
+
+  thead{
+
+    tr {
+      th{
+        @include fx-no-border;
+      }
+    }
+  }
+}
+
+.modal-dialog  {
+  z-index: 1041;
+}
+
+
+
