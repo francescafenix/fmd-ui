@@ -16,6 +16,11 @@
                     },
                     "label": {
                         "langProp": "ask1"
+                    },
+                    "info": {
+                        "popover": {
+                            "langProp": "uid"
+                        }
                     }
                 },
 				"ask1a": {
@@ -24,6 +29,11 @@
                     },
                     "label": {
                         "langProp": "ask1a"
+                    },
+                    "info": {
+                        "popover": {
+                            "langProp": "uid"
+                        }
                     }
                 }             
 
@@ -45,6 +55,11 @@
                     },
                     "label": {
                         "langProp": "ask2"
+                    },
+                    "info": {
+                        "popover": {
+                            "langProp": "uid"
+                        }
                     }
                 }         
 
@@ -66,6 +81,11 @@
                     },
                     "label": {
                         "langProp": "ask3"
+                    },
+                    "info": {
+                        "popover": {
+                            "langProp": "uid"
+                        }
                     }
                 }
 
@@ -87,6 +107,11 @@
                     },
                     "label": {
                         "langProp": "ask4"
+                    },
+                    "info": {
+                        "popover": {
+                            "langProp": "uid"
+                        }
                     }
                 }
 
@@ -116,6 +141,11 @@
                     },
                     "label": {
                         "langProp": "ask6"
+                    },
+                    "info": {
+                        "popover": {
+                            "langProp": "uid"
+                        }
                     }
                 }                
 
@@ -133,39 +163,48 @@
 
                 "ask7": {
                     "type": { "name": "text" },
-                    "label": { "langProp": "ask7" }
+                    "label": { "langProp": "ask7" },
+                    "info": { "popover": { "langProp": "uid" } }
                 },
                 "ask8": {
                     "type": { "name": "text" },
-                    "label": { "langProp": "ask8" }
+                    "label": { "langProp": "ask8" },
+                    "info": { "popover": { "langProp": "uid" } }
                 },
                 "ask9": {
                     "type": { "name": "text" },
-                    "label": { "langProp": "ask9" }
+                    "label": { "langProp": "ask9" },
+                    "info": { "popover": { "langProp": "uid" } }
                 },
                 "ask10": {
                     "type": { "name": "text" },
-                    "label": { "langProp": "ask10" }
+                    "label": { "langProp": "ask10" },
+                    "info": { "popover": { "langProp": "uid" } }
                 },
                 "ask11": {
                     "type": { "name": "text" },
-                    "label": { "langProp": "ask11" }
+                    "label": { "langProp": "ask11" },
+                    "info": { "popover": { "langProp": "uid" } }
                 },
                 "ask12": {
                     "type": { "name": "text" },
-                    "label": { "langProp": "ask13" }
+                    "label": { "langProp": "ask13" },
+                    "info": { "popover": { "langProp": "uid" } }
                 },
                 "ask13": {
                     "type": { "name": "text" },
-                    "label": { "langProp": "ask13" }
+                    "label": { "langProp": "ask13" },
+                    "info": { "popover": { "langProp": "uid" } }
                 },
                 "ask14": {
                     "type": { "name": "text" },
-                    "label": { "langProp": "ask14" }
+                    "label": { "langProp": "ask14" },
+                    "info": { "popover": { "langProp": "uid" } }
                 },
                 "ask15": {
                     "type": { "name": "text" },
-                    "label": { "langProp": "ask15" }
+                    "label": { "langProp": "ask15" },
+                    "info": { "popover": { "langProp": "uid" } }
                 }
             }
         },
@@ -185,7 +224,8 @@
                     },
                     "label": {
                         "langProp": "ask16"
-                    }
+                    },
+                    "info": { "popover": { "langProp": "uid" } }
                 },
                 "ask17": {
                     "type": {
@@ -193,7 +233,8 @@
                     },
                     "label": {
                         "langProp": "ask17"
-                    }
+                    },
+                    "info": { "popover": { "langProp": "uid" } }
                 }                
 
             }
