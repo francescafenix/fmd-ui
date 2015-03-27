@@ -1,0 +1,71 @@
+/* AFO - Home Style */
+
+@mixin colored-logo() {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  pointer-events:none;
+}
+
+
+
+
+.nav-tabs{
+  border-color: transparent;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover{
+  border-color: transparent;
+}
+
+.nav > li > a:focus, .nav > li > a:hover{
+  background-color: transparent;
+}
+
+.nav-tabs > li > a:hover{
+  border-color: transparent;
+}
+
+.afo-home-partn{
+  float: left;
+  width: 14%;
+  background-color: red;
+  height: 20px;
+  padding: 15px;
+}
+
+
+
+/* ////////////////// Home Media Queries */
+
+@media (max-width: 990px) {
+
+  .afo-home-items-container{
+    .afo-home-item{
+
+      &:nth-child(2){
+        margin-bottom: 15px;
+      }
+
+      .afo-title{
+
+      }
+
+
+
+
+    }
+
+  }
+
+
+}
+
+
+
+
+
