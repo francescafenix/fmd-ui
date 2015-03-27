@@ -27,9 +27,6 @@
 <link href="//fenixapps.fao.org/repository/js/jqwidgets/3.1/styles/jqx.base.css" rel="stylesheet" />
 <link href="//fenixapps.fao.org/repository/js/nprogress/0.1.6/nprogress.css" rel="stylesheet" />
 
-<!-- FENIX CSS -->
-<!-- <link rel="stylesheet" href="submodules/fenix-ui-common/css/fenix-style.css"> -->
-
 <link rel="stylesheet" href="submodules/fenix-ui-metadata-editor/css/pnotify.css"/>
 <link rel="stylesheet" href="submodules/fenix-ui-DSDEditor/css/fenix-ui-DSDEditor.css" type="text/css" />
 <link rel="stylesheet" href="submodules/fenix-ui-metadata-editor/css/fenix-metadata-editor.css"/>
@@ -56,29 +53,29 @@
 <div class="container">
 	<div class="row">
 	    <div class="col-xs-12">
-	        <form>
+	        <form id="form-contact">
 	            <div class="form-group">
-	                <label for="exampleInputEmail1">Country Name</label>
-	                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter the name of the country">
+	                <label>Country Name</label>
+	                <input type="text" class="form-control" placeholder="Enter the name of the country">
 	            </div>
 		        
 	            <div class="form-group">
-	                <label for="exampleInputEmail1">Date</label>
-	                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter the name of the country">
+	                <label>Date</label>
+	                <input type="text" class="form-control" placeholder="Enter the name of the country">
 	            </div>
 
 	            <div class="contact-information">
                     <h3>Contact information</h3>
 		            <div class="form-group">
-		                <label for="exampleInputPassword1">Name</label>
-		                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Name">
+		                <label>Name</label>
+		                <input type="text" class="form-control" placeholder="Name">
 		            </div>
 		            <div class="form-group">					
-						<label for="exampleInputPassword1">Contact Information</label>
-		                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+						<label>Contact Information</label>
+		                <input type="text" class="form-control" placeholder="Password">
 		            </div>
 		        </div>
-                <br>
+                <br />
 	            <button id="btn-contact-submit" type="submit" class="btn btn-default">Submit</button>
 	        </form>
 

@@ -119,9 +119,11 @@ require([
 
         this.editor = new Editor().init( userConfig );
 
-        $('#btn-contact-submit').on('click', function(e) {
+        $('#form-contact').on('submit', function(e) {
 			e.preventDefault();
-			$(this).parents('.container').slideUp();
+			var form$ = $(this);
+			form$.parents('.container').slideUp();
+			console.log( form$.serialize() );
         });
 
     });
