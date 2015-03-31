@@ -6,7 +6,7 @@
 	url = https://github.com/FENIX-Platform/fenix-ui-menu.git
 [submodule "submodules/fenix-ui-metadata-viewer"]
 	path = submodules/fenix-ui-metadata-viewer
-	url = https://github.com/FENIX-Platform/fenix-ui-metadata-viewer.git
+	url = https://github.com/FENIX-Platform/fenix-ui-metadata-viewer
 [submodule "submodules/fenix-ui-common"]
 	path = submodules/fenix-ui-common
 	url = https://github.com/FENIX-Platform/fenix-ui-common
