@@ -60,7 +60,7 @@ require(["submodules/fenix-ui-menu/js/paths",
 	    'text!config/services.json',
 
 		'fx-menu/start',
-        'src/components/AuthenticationManager',
+        'submodules/fenix-ui-common/js/AuthManager',
 
         'amplify',
 		
