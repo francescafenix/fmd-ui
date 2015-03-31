@@ -7,6 +7,3 @@
 [submodule "submodules/fenix-ui-metadata-viewer"]
 	path = submodules/fenix-ui-metadata-viewer
 	url = https://github.com/FENIX-Platform/fenix-ui-metadata-viewer.git
-[submodule "fenix-ui-common"]
-	path = fenix-ui-common
-	url = https://github.com/FENIX-Platform/fenix-ui-common.git
