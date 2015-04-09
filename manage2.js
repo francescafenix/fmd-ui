@@ -2,23 +2,16 @@
 /*global require*/
 // relative or absolute path of Components' main.js
 require([
-    'submodules/fenix-ui-common/js/Compiler',
-    'submodules/fenix-ui-metadata-editor/js/paths',
-    'submodules/fenix-ui-menu/js/paths'
-], function (Compiler, 
-	MetadataEditor,
-	Menu) {
+	'submodules/fenix-ui-common/js/Compiler',
+	'submodules/fenix-ui-menu/js/paths'
+], function (Compiler, menuConfig) {
 
-    var metadataEditorConfig = MetadataEditor;
-    metadataEditorConfig['baseUrl'] = 'submodules/fenix-ui-metadata-editor/js/';
+    menuConfig.baseUrl = 'submodules/fenix-ui-menu/js';
 
-    var menuConfig = Menu;
-    menuConfig['baseUrl'] = 'submodules/fenix-ui-menu/js';
-
-    Compiler.resolve([metadataEditorConfig, menuConfig], {
+    Compiler.resolve([menuConfig], {
             placeholders: {
             	FENIX_CDN: "//fenixapps.fao.org/repository",
-            	FENIX_CONF_NLS: "../../../config/fenix-ui-metadata-editor/nls"
+            	FENIX_CONF_NLS: "../../../nls"
             },
             config: {
                 locale: 'en',
