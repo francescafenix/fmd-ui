@@ -9,8 +9,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     
     <link href="//fenixapps.fao.org/repository/js/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="submodules/fenix-ui-common/css/fenix-style.css">
-    <!-- <link rel="stylesheet" href="css/host.css"> -->
+
+	<link rel="stylesheet" href="css/host.css">
+
 </head>
 <body>
 
@@ -24,12 +27,46 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-xs-6">
+		<div class="col-xs-12">
+			<h3>Contact information</h3>
+			<form id="form-contact">
+				<div class="form-group">
+				    <label>Country Name</label>
+				    <input type="text" class="form-control" placeholder="Enter the name of the country">
+				</div>
 
+				<div class="form-group">
+				    <label>Date</label>
+				    <input type="text" class="form-control" placeholder="Enter the name of the country">
+				</div>
+
+				<div class="contact-information">
+				    <div class="form-group">
+				        <label>Name</label>
+				        <input type="text" class="form-control" placeholder="Name">
+				    </div>
+				    <div class="form-group">					
+						<label>Contact Information</label>
+				        <input type="text" class="form-control" placeholder="Password">
+				    </div>
+				</div>
+				<br>
+				<button id="btn-contact-submit" type="submit" class="btn btn-default">Submit</button>
+			</form>
 		</div>
 	</div>
 </div>
 
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<h3>Compile </h3>
+			<div id="pills-quest">&nbsp;
+				<!-- FILLED BY JS -->
+			</div>
+		</div>
+	</div>
+</div>
 
 
 

@@ -1,12 +1,16 @@
-<div class="tabbable">
-    <ul class="nav nav-pills nav-stacked col-md-3">
-		{{#each items}}
-        <li class="active"><a href="#{{id}}" data-toggle="tab">One</a></li>
-
+<div class="fx-pills">
+    <ul class="nav nav-pills nav-stacked col-md-4">
+	{{#each items}}
+		{{#with this}}
+        <li class="{{#if active}}active{{/if}}"><a href="#{{id}}" data-toggle="tab">{{title}}</a></li>
+		{{/with}}
+	{{/each}}
     </ul>
-    <div class="tab-content col-md-9">
-        <div class="tab-pane active" id="a">Lorem ipsum dolor sit amet, charetra varius rci quis tortor imperdiet venenatis quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero.</div>
-        <div class="tab-pane" id="b">Secondo sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. Aliquam in felis sit amet augue.</div>
-        <div class="tab-pane" id="c">Thirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum auctor accumsan. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae. </div>
+    <div class="tab-content col-md-8">
+	{{#each items}}
+		{{#with this}}    
+        <div class="tab-pane {{#if active}}active{{/if}}" id="{{id}}">{{{html}}}</div>
+		{{/with}}
+	{{/each}}
     </div>
 </div>
