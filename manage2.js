@@ -61,8 +61,6 @@ require([
     	tmplPills
     ) {
 
-    	console.log('Quests', Quests);
-
     	pillsTmpl = Handlebars.compile(tmplPills);
 
         var authUser = amplify.store.sessionStorage('afo.security.user'),
@@ -104,12 +102,29 @@ require([
             })
         }
 
-		$('#pills-quest').html(pillsTmpl({
-			items: [
+/*        var questions = [
 				{id:1, title: "ciao1", active: true, html:'<b>HTML1</b>'},
 				{id:2, title: "ciao2", active: false, html:'<b>HTML2</b>'},
 				{id:3, title: "ciao3", active: false, html:'<b>HTML3</b>'}
-			]
+			];*/
+
+		var activeSection = 'cat1',
+			questions = _.compact(_.map(Quests, function(title, key) {
+			if(key.match(/^cat/))
+			return {
+				id: key,
+				title: title,
+				html: '',
+				active: activeSection===key
+			};
+        }));
+
+        console.log(questions);
+
+
+
+		$('#pills-quest').html(pillsTmpl({
+			items: questions
 		}) );
 
         $('#form-contact').on('submit', function(e) {

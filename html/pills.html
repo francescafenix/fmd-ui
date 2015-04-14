@@ -10,7 +10,10 @@
 	<div class="tab-content col-md-8">
 	{{#each items}}
 		{{#with this}}    
-		<div class="tab-pane {{#if active}}active{{/if}}" id="{{id}}">{{{html}}}</div>
+		<div class="tab-pane {{#if active}}active{{/if}}" id="{{id}}">
+			<h2>Section {{id}}</h2>
+			{{{html}}}
+		</div>
 		{{/with}}
 	{{/each}}
 	</div>
