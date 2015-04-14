@@ -129,6 +129,24 @@ require([
 
         $('#form-contact').on('submit', function(e) {
 			e.preventDefault();
+
+			var isFormValid = true;
+
+			$(this).find('input').each(function() {
+			    if ($.trim($(this).val()).length == 0) {
+			        $(this).parent('.form-group').addClass('has-error');
+			        isFormValid = false;
+			    }
+			    else{
+			        $(this).parent('.form-group').removeClass('has-error');
+			    }
+			});
+
+			if(!isFormValid) {
+				alert('Please fill in all fields');
+				return false;
+			}
+
 			var adata = $(this).serializeArray();
 			//var data = _.object(_.pluck(adata, 'name'), _.pluck(adata, 'value'));
 
