@@ -122,10 +122,16 @@ require([
         console.log(questions);
 
 
-
 		$('#pills-quest').html(pillsTmpl({
 			items: questions
 		}) );
+
+		$('#pills-quest a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+			//e.target // newly activated tab
+			//e.relatedTarget // previous active tab
+
+			console.log( $(e.target).data('id') );
+		});
 
         $('#form-contact').on('submit', function(e) {
 			e.preventDefault();
