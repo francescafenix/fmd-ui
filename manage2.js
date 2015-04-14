@@ -18,11 +18,11 @@ require([
                 paths: {
 					text: "{FENIX_CDN}/js/requirejs/plugins/text/2.0.12/text",
 					i18n: "{FENIX_CDN}/js/requirejs/plugins/i18n/2.0.4/i18n",
-					domready: "{FENIX_CDN}/js/requirejs/plugins/domready/2.0.1/domReady",
-
-                    underscore: "{FENIX_CDN}/js/underscore/1.7.0/underscore.min",
-                    handlebars: "{FENIX_CDN}/js/handlebars/2.0.0/handlebars",
-                    amplify:    "{FENIX_CDN}/js/amplify/1.1.2/amplify.min"
+					domready:  "{FENIX_CDN}/js/requirejs/plugins/domready/2.0.1/domReady",
+					jquery:    "{FENIX_CDN}/js/jquery/2.1.1/jquery.min",
+					amplify:   "{FENIX_CDN}/js/amplify/1.1.2/amplify.min",
+					handlebars:"{FENIX_CDN}/js/handlebars/2.0.0/handlebars",
+					underscore:"{FENIX_CDN}/js/underscore/1.7.0/underscore.min"
                 },
                 shim: {
                     underscore: {
@@ -41,20 +41,19 @@ require([
 
     // Bootstrap the application
     require([
+    	'jquery','underscore','handlebars','amplify',
+
         'fx-menu/start',
         'submodules/fenix-ui-common/js/AuthManager',
-        'handlebars',
-        'amplify',
 
         'text!config/services.json',
-
 		'text!html/pills.html',
 
         'domready!'
-    ], function (TopMenu, AuthManager, Handlebars, Amplify,
-
-    	Config,
-    	tmplPills) {
+    ], function ($, _, Handlebars, Amplify,
+    	TopMenu, AuthManager,
+    	Config, tmplPills
+    ) {
 
     	pillsTmpl = Handlebars.compile(tmplPills);
 
@@ -76,9 +75,7 @@ require([
             }
         });
         
-        /*Login*/
         new AuthManager();
-
         amplify.subscribe('login', function (user) {
             refreshMenu(authMenuConfig);
         });
@@ -107,13 +104,16 @@ require([
 			]
 		}) );
 
-
         $('#form-contact').on('submit', function(e) {
 			e.preventDefault();
-			var form$ = $(this);
-			form$.parents('.container').slideUp();
-			console.log( form$.serialize() );
-        });
+			var adata = $(this).serializeArray();
+			//var data = _.object(_.pluck(adata, 'name'), _.pluck(adata, 'value'));
 
+			console.log( adata );
+
+			$(this).replaceWith( Handlebars.compile('<ul>{{#each this}}<li>{{name}}: {{value}}</li>{{/each}}</ul>')(adata) );
+
+			//TODO enaleble following json-editor form
+        });
     });
 });

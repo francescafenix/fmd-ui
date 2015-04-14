@@ -1,8 +1,4 @@
-define({
-"en": true,
-"fr": true,
-"root": {
-    
+{    
 	"cat1": "GENERAL INFORMATION",
 
 		"ask1":   "1) Has your country identified a list of Priority Transboundary Animal Diseases (TAD)?",
@@ -198,4 +194,3 @@ define({
 		"ask32.3.1": "Name:",
 		"ask32.3.2": "eMail:"
 }
-});
