@@ -11,10 +11,12 @@ require([
     Compiler.resolve([menuConfig], {
             placeholders: {
             	FENIX_CDN: "//fenixapps.fao.org/repository",
-            	FENIX_I18N: "../../../i18n"
+            	//FENIX_NLS: "../../../nls" //used by metadata editor
             },
             config: {
-                locale: 'en',
+            	i18n: {
+                	locale: 'en'
+                },
                 paths: {
 					text: "{FENIX_CDN}/js/requirejs/plugins/text/2.0.12/text",
 					i18n: "{FENIX_CDN}/js/requirejs/plugins/i18n/2.0.4/i18n",
@@ -46,14 +48,20 @@ require([
         'fx-menu/start',
         'submodules/fenix-ui-common/js/AuthManager',
 
-        'text!config/services.json',
+        'config/services',
+		'i18n!nls/questions',
 		'text!html/pills.html',
 
         'domready!'
     ], function ($, _, Handlebars, Amplify,
     	TopMenu, AuthManager,
-    	Config, tmplPills
+    	
+    	Config,
+    	Quests,
+    	tmplPills
     ) {
+
+    	console.log('Quests', Quests);
 
     	pillsTmpl = Handlebars.compile(tmplPills);
 

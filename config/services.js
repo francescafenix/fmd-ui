@@ -1,4 +1,4 @@
-{
+define({
   "dbName": "fmd",
   "wdsUrl": "http://faostat3.fao.org/wds/rest/table/json",
   "wdsUrlExportCsv": "http://faostat3.fao.org/wds/rest/exporter/streamcsv",
@@ -17,4 +17,4 @@
   "url_baselayer": "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
   "url_osmlayer": "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
   "map_attribution": "&copy; <a href='http://www.openstreetmap.org/copyright'>OSM contrib</a>"
-}
+});
