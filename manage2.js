@@ -24,7 +24,8 @@ require([
 				jquery:    "{FENIX_CDN}/js/jquery/2.1.1/jquery.min",
 				amplify:   "{FENIX_CDN}/js/amplify/1.1.2/amplify.min",
 				handlebars:"{FENIX_CDN}/js/handlebars/2.0.0/handlebars",
-				underscore:"{FENIX_CDN}/js/underscore/1.7.0/underscore.min"
+				underscore:"{FENIX_CDN}/js/underscore/1.7.0/underscore.min",
+				jsoneditor:"{FENIX_CDN}/js/json-editor/0.7.17/jsoneditor.min"
             },
             shim: {
                 underscore: {
@@ -36,14 +37,17 @@ require([
                 amplify: {
                     deps: ['jquery'],
                     exports: 'amplifyjs'
-                }
+                },
+                jsoneditor: {
+	                deps: ['jquery', 'bootstrap']
+	            }
             }
         }
     });
 
     // Bootstrap the application
     require([
-    	'jquery','underscore','handlebars','amplify',
+    	'jquery','underscore','handlebars','amplify','jsoneditor',
 
         'fx-menu/start',
         'submodules/fenix-ui-common/js/AuthManager',
@@ -53,7 +57,7 @@ require([
 		'text!html/pills.html',
 
         'domready!'
-    ], function ($, _, Handlebars, Amplify,
+    ], function ($, _, Handlebars, Amplify, JsonEditor,
     	TopMenu, AuthManager,
     	
     	Config,
