@@ -2099,3 +2099,10 @@ thead {
 
 .modal-dialog {
   z-index: 1041; }
+
+.navbar-fixed-top {
+	box-shadow: 0 -1px 8px rgba(100,100,100,0.5)
+}
+footer {
+	padding-top: 100px;
+}

@@ -41,6 +41,16 @@
         "EN": "About Us",
         "FR": ""
       }      
+    },
+        {
+      "attrs": {
+        "id": "manage"
+      },
+      "target": "manage.html",
+      "label": {
+        "EN": "Compile Questionnaire",
+        "FR": ""
+      }
     }
   ],
   "rightItems": [
