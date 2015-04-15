@@ -73,14 +73,33 @@
 	
 	<div class="row"> <hr /> </div>
 
-	<div class="row">
-		<div class="col-xs-12">
-			<h1>Questionnaire</h1>
-			<div id="pills-quest">&nbsp;
-				<!-- FILLED BY JS -->
+	<div role="tabpanel">
+		<ul class="nav nav-tabs" role="tablist">
+			<li class="active"><a href="#down" aria-controls="down" role="tab" data-toggle="tab">Download Questionnaire</a></li>
+			<li><a href="#compile" aria-controls="home" role="tab" data-toggle="tab">Compile Questionnaire Online</a></li>
+		</ul>
+		<div class="tab-content">
+			<div role="tabpanel" class="tab-pane active" id="down">
+				<div class="row">
+					<div class="col-xs-12 text-center">
+						<br /><br /><br />
+						<button class="btn btn-default btn-lg" id="btn-download-precompile">Download PDF</button>
+						<br /><br /><br /><br /><br />
+					</div>
+				</div>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="compile">
+				<div class="row">
+					<div class="col-xs-12">
+						<div id="pills-quest">&nbsp;
+							<!-- FILLED BY JS -->
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
+
 </div>
 
 
