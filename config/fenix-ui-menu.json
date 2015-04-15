@@ -46,7 +46,7 @@
       "attrs": {
         "id": "manage"
       },
-      "target": "manage.html",
+      "target": "manage2.html",
       "label": {
         "EN": "Compile Questionnaire",
         "FR": ""
