@@ -85,10 +85,10 @@ require([
         });
         
         new AuthManager();
-        amplify.subscribe('login', function (user) {
+        amplify.subscribe('fx.auth.login', function (user) {
             refreshMenu(authMenuConfig);
         });
-        amplify.subscribe('logout', function () {
+        amplify.subscribe('fx.auth.logout', function () {
             console.warn("Event logout intercepted");
             refreshMenu(publicMenuConfig);
         });
@@ -115,8 +115,6 @@ require([
 				active: activeSection===key
 			};
         }));
-
-        console.log(questions);
 
 
 		$('#pills-quest').html(tmplPills({
@@ -152,8 +150,6 @@ require([
 
 			var adata = $(this).serializeArray();
 			//var data = _.object(_.pluck(adata, 'name'), _.pluck(adata, 'value'));
-
-			console.log( adata );
 
 			$(this).replaceWith( Handlebars.compile('<ul>{{#each this}}<li>{{name}}: {{value}}</li>{{/each}}</ul>')(adata) );
 

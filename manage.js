@@ -79,10 +79,10 @@ require([
         /*Login*/
         new AuthenticationManager();
 
-        amplify.subscribe('login', function (user) {
+      amplify.subscribe('fx.auth.login', function (user) {
             refreshMenu(authMenuConfig);
         });
-        amplify.subscribe('logout', function () {
+        amplify.subscribe('fx.auth.logout', function () {
             console.warn("Event logout intercepted");
             refreshMenu(publicMenuConfig);
         });
