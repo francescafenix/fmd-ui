@@ -105,12 +105,6 @@ require([
             })
         }
 
-/*        var questions = [
-				{id:1, title: "ciao1", active: true, html:'<b>HTML1</b>'},
-				{id:2, title: "ciao2", active: false, html:'<b>HTML2</b>'},
-				{id:3, title: "ciao3", active: false, html:'<b>HTML3</b>'}
-			];*/
-
 		var activeSection = 'cat1',
 			questions = _.compact(_.map(Quests, function(title, key) {
 			if(key.match(/^cat/))

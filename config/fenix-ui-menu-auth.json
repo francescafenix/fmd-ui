@@ -44,7 +44,7 @@
     },
     {
       "attrs": {
-        "id": "view",
+        "id": "view"
       },
       "target": "view.html",
       "label": {
