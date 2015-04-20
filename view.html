@@ -2,33 +2,42 @@
 <html>
 <head>
 
-    <title>EuFMD</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="format-detection" content="telephone=no">
+<title>EuFMD</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-    <meta name="description" content="FENIX Structure">
+<meta name="description" content="FENIX Structure">
+<meta name="author" content="Daniele Salvatore <daniele.salvatore [at] fao.org>">
+<meta name="author" content="Daniele Olivotti <daniele.olivotti[at]fao.org>">
+<meta name="author" content="Nicola Selleri <nicola.selleri[at]fao.org>">
 
-    <!-- Third Party CSS -->
-    <link href="//fenixapps.fao.org/repository/js/bootstrap/3.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/iThing-min.css" rel="stylesheet" />
-    <link href="css/jqwidgets/styles/jqx.base.css" type="text/css"  rel="stylesheet"/>
+<!-- Third Party CSS -->
+<link href="//fenixapps.fao.org/repository/js/bootstrap/3.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/iThing-min.css" rel="stylesheet" />
+<link href="css/jqwidgets/styles/jqx.base.css" type="text/css" rel="stylesheet" />
 
-    <link href="//cdn.jsdelivr.net/bootstrap.tagsinput/0.4.2/bootstrap-tagsinput.css" rel="stylesheet" />
-    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
-    <link href="//cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css" rel="stylesheet" />
-    <link href="css/formprogress.css" rel="stylesheet" />
-    <link href="//fenixapps.fao.org/repository/js/jqwidgets/3.1/styles/jqx.base.css" rel="stylesheet" />
-	<link href="//fenixapps.fao.org/repository/js/nprogress/0.1.6/nprogress.css" rel="stylesheet" />
+<link href="//cdn.jsdelivr.net/bootstrap.tagsinput/0.4.2/bootstrap-tagsinput.css" rel="stylesheet" />
+<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+<link href="//cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css" rel="stylesheet" />
+<link href="css/formprogress.css" rel="stylesheet" />
+<link href="//fenixapps.fao.org/repository/js/jqwidgets/3.1/styles/jqx.base.css" rel="stylesheet" />
+<link href="//fenixapps.fao.org/repository/js/nprogress/0.1.6/nprogress.css" rel="stylesheet" />
 
-    <!-- FENIX CSS -->
-    <link rel="stylesheet" href="submodules/fenix-ui-common/css/fenix-style.css">
+<link rel="stylesheet" href="submodules/fenix-ui-metadata-editor/css/pnotify.css"/>
+<link rel="stylesheet" href="submodules/fenix-ui-metadata-editor/css/fenix-metadata-editor.css"/>
 
-	<link rel="stylesheet" href="css/host.css">
+<link rel="stylesheet" href="css/host.css">
 
+<style type="text/css">
+.control-label {
+	float: left;
+	clear: both;
+}
+</style>
 </head>
 <body>
   <div class="container">
@@ -39,35 +48,46 @@
       </div>
   </div>
 
-    <button id="debug_skipMeta" type="button" style="display:none">ff</button>
-    <!--<button id="debug_skipMeta" type="button">ff</button>-->
+
+<div class="container">
+	<div class="row">
+	    <div class="col-xs-12">
+	        <form id="form-contact">
+	            <div class="form-group">
+	                <label>Country Name</label>
+	                <input type="text" class="form-control" placeholder="Enter the name of the country">
+	            </div>
+		        
+	            <div class="form-group">
+	                <label>Date</label>
+	                <input type="text" class="form-control" placeholder="Enter the name of the country">
+	            </div>
+
+	            <div class="contact-information">
+                    <h3>Contact information</h3>
+		            <div class="form-group">
+		                <label>Name</label>
+		                <input type="text" class="form-control" placeholder="Name">
+		            </div>
+		            <div class="form-group">					
+						<label>Contact Information</label>
+		                <input type="text" class="form-control" placeholder="Password">
+		            </div>
+		        </div>
+                <br />
+	            <button id="btn-contact-submit" type="submit" class="btn btn-default">Submit</button>
+	        </form>
+
+	    </div>
+	</div>
+	<hr />
+</div>
+
 
 <!-- FENIX Metadata Editor-->
-<div id="metadataEditorContainer"></div>
-
-<!-- FENIX DSD Container-->
-    <div id="DSDEditorContainer" class="container" style="visibility:hidden">
-        <p>Welcome to the Fenix Platform Data Editor. Please start by adding the metadata. Later, you can use the Column editor on the left (1) to add and modify columns. These are displayed in the right side (2), where you can check your personalized columns. </p>
-        <div class="row">
-            <div class="col-sm-12   ">
-                <div id="DSDEditorMainContainer" class="row"></div>
-                Upload a CSV<div id="divUplaodCSV"></div>
-                <button id="btnColsEditDone" type="button" class="btn btn-default pull-right">Done</button>
-                <hr>
-                <a href="sampledata/management/fenix_data_upload_sample.csv">Download Sample CSV</a>
-                <hr>
-            </div>
-        </div>
-    </div>
-
-    <div id="DataEditorContainer" class="container" style="visibility:hidden">
-        <div class="row">
-            <div class="col-xs-12">
-                <div id="DataEditorMainContainer"></div>
-                <button id="createDatasetEnd" type="button" class="btn btn-default pull-right">Done</button>
-            </div>
-        </div>
-    </div>
+<div id="metadataEditorContainer">
+	<!-- FILLED BY JS -->
+</div>
 
 <div class="container">
     <!-- FOOTER -->
@@ -79,6 +99,6 @@
 
 </div>
 
-<script data-main="view" src="//fenixapps.fao.org/repository/js/requirejs/2.1.15/require.min.js"></script>
+<script data-main="manage" src="//fenixapps.fao.org/repository/js/requirejs/2.1.15/require.min.js"></script>
 </body>
 </html>

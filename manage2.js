@@ -51,21 +51,20 @@ require([
 
         'fx-menu/start',
         'submodules/fenix-ui-common/js/AuthManager',
+		'text!submodules/fenix-ui-common/html/pills.html',
 
         'config/services',
 		'i18n!nls/questions',
-		'text!html/pills.html',
 
         'domready!'
     ], function ($, _, Handlebars, Amplify, JsonEditor,
-    	TopMenu, AuthManager,
+    	TopMenu, AuthManager, tmplPills,
     	
     	Config,
-    	Quests,
-    	tmplPills
+    	Quests
     ) {
 
-    	pillsTmpl = Handlebars.compile(tmplPills);
+    	tmplPills = Handlebars.compile(tmplPills);
 
         var authUser = amplify.store.sessionStorage('afo.security.user'),
             menuUrl,
@@ -126,7 +125,7 @@ require([
         console.log(questions);
 
 
-		$('#pills-quest').html(pillsTmpl({
+		$('#pills-quest').html(tmplPills({
 			items: questions
 		}) );
 

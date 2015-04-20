@@ -1,64 +1,60 @@
 
-/*global require*/
-// relative or absolute path of Components' main.js
-require([
-    'submodules/fenix-ui-common/js/Compiler',
-    'submodules/fenix-ui-metadata-editor/js/paths',
-    'submodules/fenix-ui-menu/js/paths'
-], function (Compiler, 
-	MetadataEditor,
-	Menu) {
-
-    var metadataEditorConfig = MetadataEditor;
-    metadataEditorConfig['baseUrl'] = 'submodules/fenix-ui-metadata-editor/js/';
+require(["submodules/fenix-ui-menu/js/paths",
+		 "submodules/fenix-ui-common/js/Compiler"
+		 ], function(Menu, Compiler) {
 
     var menuConfig = Menu;
-    menuConfig['baseUrl'] = 'submodules/fenix-ui-menu/js';
+    
+    menuConfig['baseUrl'] = "submodules/fenix-ui-menu/js";
 
-    Compiler.resolve([metadataEditorConfig, menuConfig], {
-            placeholders: {
-            	FENIX_CDN: "//fenixapps.fao.org/repository",
-            	FENIX_CONF_NLS: "../../../config/fenix-ui-metadata-editor/nls"
+    Compiler.resolve([menuConfig], {
+        placeholders: {
+        	FENIX_CDN: "//fenixapps.fao.org/repository",
+        	//FENIX_NLS: "../../../nls" //used by metadata editor
+        },
+        config: {
+        	i18n: {
+            	locale: 'en'
             },
-            config: {
-                locale: 'en',
-                paths: {
-                    underscore: "{FENIX_CDN}/js/underscore/1.7.0/underscore.min",
-                    backbone:   "{FENIX_CDN}/js/backbone/1.1.2/backbone.min",
-                    handlebars: "{FENIX_CDN}/js/handlebars/2.0.0/handlebars",
-                    amplify:    "{FENIX_CDN}/js/amplify/1.1.2/amplify.min",
-                    config: 'config',
-                    html: 'html'
+            paths: {
+				text: "{FENIX_CDN}/js/requirejs/plugins/text/2.0.12/text",
+				i18n: "{FENIX_CDN}/js/requirejs/plugins/i18n/2.0.4/i18n",
+				domready:  "{FENIX_CDN}/js/requirejs/plugins/domready/2.0.1/domReady",
+				jquery:    "{FENIX_CDN}/js/jquery/2.1.1/jquery.min",
+				amplify:   "{FENIX_CDN}/js/amplify/1.1.2/amplify.min",
+				handlebars:"{FENIX_CDN}/js/handlebars/2.0.0/handlebars",
+				underscore:"{FENIX_CDN}/js/underscore/1.7.0/underscore.min"
+            },
+            shim: {
+                underscore: {
+                    exports: '_'
                 },
-                shim: {
-                    underscore: {
-                        exports: '_'
-                    },
-                    backbone: {
-                        deps: ['underscore', 'jquery'],
-                        exports: 'Backbone'
-                    },
-                    handlebars: {
-                        exports: 'Handlebars'
-                    },
-                    amplify: {
-                        deps: ['jquery'],
-                        exports: 'amplifyjs'
-                    }
+                handlebars: {
+                    exports: 'Handlebars'
+                },
+                amplify: {
+                    deps: ['jquery'],
+                    exports: 'amplifyjs'
                 }
             }
-        });
+        }
+    });
 
-    // Bootstrap the application
-    require([
+	require([
+    	'jquery','underscore','handlebars','amplify',
+
         'fx-menu/start',
-        'src/components/AuthenticationManager',
-        'fx-editor/start',
-        
-        'amplify',
+        'submodules/fenix-ui-common/js/AuthManager',
 
-        'domReady!'
-    ], function (TopMenu, AuthenticationManager, Editor) {
+        'config/services',
+		
+		'domready!'
+	], function($, _, Handlebars, Amplify,
+    	TopMenu, AuthManager,
+    	
+    	Config
+		) {
+
 
         var authUser = amplify.store.sessionStorage('afo.security.user'),
             menuUrl,
@@ -78,9 +74,7 @@ require([
             }
         });
         
-        /*Login*/
-        new AuthenticationManager();
-
+        new AuthManager();
         amplify.subscribe('login', function (user) {
             refreshMenu(authMenuConfig);
         });
@@ -100,7 +94,8 @@ require([
                 }
             })
         }
+        
+	});
 
 
-    });
 });

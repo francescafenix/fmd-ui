@@ -42,7 +42,17 @@
         "FR": ""
       }      
     },
-        {
+    {
+      "attrs": {
+        "id": "view",
+      },
+      "target": "view.html",
+      "label": {
+        "EN": "View Questionnaires",
+        "FR": ""
+      }
+    },
+    {
       "attrs": {
         "id": "manage"
       },
