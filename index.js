@@ -45,13 +45,11 @@ require(["submodules/fenix-ui-menu/js/paths",
 
         'fx-menu/start',
         'submodules/fenix-ui-common/js/AuthManager',
-
         'config/services',
 		
 		'domready!'
 	], function($, _, Handlebars, Amplify,
     	TopMenu, AuthManager,
-    	
     	Config
 		) {
 
@@ -69,7 +67,7 @@ require(["submodules/fenix-ui-menu/js/paths",
             className : 'fx-top-menu',
             breadcrumb : {
                 active : true,
-                container : "#breadcumb_container",
+                container : ".fx-menu-breadcrumb",
                 showHome : true
             }
         });

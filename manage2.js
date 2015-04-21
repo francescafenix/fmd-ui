@@ -10,7 +10,7 @@ require([
 
     Compiler.resolve([menuConfig], {
         placeholders: {
-        	FENIX_CDN: "//fenixapps.fao.org/repository",
+        	FENIX_CDN: "//fenixapps.fao.org/repository"
         	//FENIX_NLS: "../../../nls" //used by metadata editor
         },
         config: {
@@ -18,8 +18,8 @@ require([
             	locale: 'en'
             },
             paths: {
-				text: "{FENIX_CDN}/js/requirejs/plugins/text/2.0.12/text",
-				i18n: "{FENIX_CDN}/js/requirejs/plugins/i18n/2.0.4/i18n",
+				text:      "{FENIX_CDN}/js/requirejs/plugins/text/2.0.12/text",
+				i18n:      "{FENIX_CDN}/js/requirejs/plugins/i18n/2.0.4/i18n",
 				domready:  "{FENIX_CDN}/js/requirejs/plugins/domready/2.0.1/domReady",
 				jquery:    "{FENIX_CDN}/js/jquery/2.1.1/jquery.min",
 				amplify:   "{FENIX_CDN}/js/amplify/1.1.2/amplify.min",
@@ -51,59 +51,43 @@ require([
 
         'fx-menu/start',
         'submodules/fenix-ui-common/js/AuthManager',
-		'text!submodules/fenix-ui-common/html/pills.html',
+		'config/fenix-ui-menu',
+
+		'text!submodules/fenix-ui-common/html/pills.html',		
 
         'config/services',
 		'i18n!nls/questions',
 
         'domready!'
     ], function ($, _, Handlebars, Amplify, JsonEditor,
-    	TopMenu, AuthManager, tmplPills,
-    	
+    	TopMenu, AuthManager, menuConfig,
+    	tmplPills,
     	Config,
     	Quests
     ) {
 
+    	menuConfig.active = 'manage';
+
+		var menuConfigAuth = _.extend({}, menuConfig, {
+				hiddens: ['login']
+			}),
+			menuConfigPub = _.extend({}, menuConfig, {
+				hiddens: ['manage','logout']
+			});
+
+		var topMenu,
+			authMan = new AuthManager({
+				onLogin: function(user) {
+					topMenu.refresh(menuConfigAuth);
+				},
+				onLogout: function() {
+					topMenu.refresh(menuConfigPub);
+				}
+			});
+
+		topMenu = new TopMenu( authMan.isLogged() ? menuConfigAuth : menuConfigPub );
+
     	tmplPills = Handlebars.compile(tmplPills);
-
-        var authUser = amplify.store.sessionStorage('afo.security.user'),
-            menuUrl,
-            publicMenuConfig =  'config/fenix-ui-menu.json',
-            authMenuConfig = 'config/fenix-ui-menu-auth.json';
-
-        authUser ? menuUrl = authMenuConfig : menuUrl = publicMenuConfig;
-
-        var topMenu = new TopMenu({
-            active: 'manage',
-            url: menuUrl,
-            className : 'fx-top-menu',
-            breadcrumb : {
-                active : true,
-                container : "#breadcumb_container",
-                showHome : true
-            }
-        });
-        
-        new AuthManager();
-        amplify.subscribe('fx.auth.login', function (user) {
-            refreshMenu(authMenuConfig);
-        });
-        amplify.subscribe('fx.auth.logout', function () {
-            console.warn("Event logout intercepted");
-            refreshMenu(publicMenuConfig);
-        });
-        function refreshMenu(url) {
-            topMenu.refresh({
-                active: 'manage',
-                url: url,
-                className : 'fx-top-menu',
-                breadcrumb : {
-                    active : true,
-                    container : "#breadcumb_container",
-                    showHome : true
-                }
-            })
-        }
 
 		var activeSection = 'cat1',
 			questions = _.compact(_.map(Quests, function(title, key) {

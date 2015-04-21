@@ -4,14 +4,14 @@
     "target": "index.html"
   },
   "languages": [
-    {
-      "lang": "FR",
-      "label": "Fr"
-    },
-      {
-          "lang": "EN",
-          "label": "En"
-      }
+	{
+	  "lang": "FR",
+	  "label": "Fr"
+	},
+	{
+	  "lang": "EN",
+	  "label": "En"
+	}
   ],
   "items": [
     {
