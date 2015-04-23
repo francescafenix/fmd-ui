@@ -65,7 +65,7 @@ define({
 				"attrs": {
 					"id": "manage"
 				},
-				"target": "manage2.html",
+				"target": "manage.html",
 				"label": {
 					"EN": "Compile Questionnaire",
 					"FR": ""

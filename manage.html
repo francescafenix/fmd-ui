@@ -1,92 +1,115 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-
 <title>EuFMD</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="format-detection" content="telephone=no">
-
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-<meta name="description" content="FENIX Structure">
-<meta name="author" content="Daniele Salvatore <daniele.salvatore [at] fao.org>">
-<meta name="author" content="Daniele Olivotti <daniele.olivotti[at]fao.org>">
-<meta name="author" content="Nicola Selleri <nicola.selleri[at]fao.org>">
-
-<!-- Third Party CSS -->
-<link href="//fenixapps.fao.org/repository/js/bootstrap/3.2/css/bootstrap.min.css" rel="stylesheet">
-<link href="css/iThing-min.css" rel="stylesheet" />
-<link href="css/jqwidgets/styles/jqx.base.css" type="text/css" rel="stylesheet" />
-
-<link href="//cdn.jsdelivr.net/bootstrap.tagsinput/0.4.2/bootstrap-tagsinput.css" rel="stylesheet" />
-<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
-<link href="//cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css" rel="stylesheet" />
-<link href="css/formprogress.css" rel="stylesheet" />
-<link href="//fenixapps.fao.org/repository/js/jqwidgets/3.1/styles/jqx.base.css" rel="stylesheet" />
-<link href="//fenixapps.fao.org/repository/js/nprogress/0.1.6/nprogress.css" rel="stylesheet" />
-
-<link rel="stylesheet" href="submodules/fenix-ui-metadata-editor/css/pnotify.css"/>
-<link rel="stylesheet" href="submodules/fenix-ui-metadata-editor/css/fenix-metadata-editor.css"/>
+<link href="//fenixapps.fao.org/repository/js/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
 
 <link rel="stylesheet" href="css/host.css">
 
 <style type="text/css">
-.control-label {
-	float: left;
-	clear: both;
+/*MOVE TO CSS FILE*/
+.nav-pills {
+	border-right: 1px solid #43beaf;
+}
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:focus,
+.nav-pills > li.active > a:hover {
+	color: #fff;
+	background-color: #43beaf;
+	opacity: 0.7
+}
+
+.has-error .form-control {
+  border-color: #f00
 }
 </style>
 </head>
 <body>
-  <div class="container">
-      <div class="row">
-          <div class="col-xs-12">
-              <div id="breadcumb_container"></div>
-          </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-xs-12">
+          <div class="fx-menu-breadcrumb"></div>
       </div>
   </div>
-
+</div>
 
 <div class="container">
 	<div class="row">
-	    <div class="col-xs-12">
-	        <form id="form-contact">
-	            <div class="form-group">
-	                <label>Country Name</label>
-	                <input type="text" class="form-control" placeholder="Enter the name of the country">
-	            </div>
-		        
-	            <div class="form-group">
-	                <label>Date</label>
-	                <input type="text" class="form-control" placeholder="Enter the name of the country">
-	            </div>
+		<div class="col-xs-12">
+			<h1>Compiler Information</h1>
+			<form id="form-contact">
+				<div class="form-group col-xs-6">
+				    <label>Country Name</label>
+				    <input type="text" name="country" class="form-control" placeholder="Enter the name of the country" value="" />
+				</div>
+				<div class="form-group col-xs-6">
+				    <label>Date</label>
+				    <input type="date" name="date" class="form-control" placeholder="Enter the name of the country" value="" />
+				</div>
 
-	            <div class="contact-information">
-                    <h3>Contact information</h3>
-		            <div class="form-group">
-		                <label>Name</label>
-		                <input type="text" class="form-control" placeholder="Name">
-		            </div>
-		            <div class="form-group">					
+				<div class="contact-information">
+				    <div class="form-group">
+				        <label>Name</label>
+				        <input type="text" name="name" class="form-control" placeholder="Name" value="" />
+				    </div>
+				    <div class="form-group">					
 						<label>Contact Information</label>
-		                <input type="text" class="form-control" placeholder="Password">
-		            </div>
-		        </div>
-                <br />
-	            <button id="btn-contact-submit" type="submit" class="btn btn-default">Submit</button>
-	        </form>
-
-	    </div>
+				        <input type="text" name="contact" class="form-control" placeholder="Contact" value="" />
+				    </div>
+				</div>
+				<br />
+				<input id="btn-contact-submit" type="submit" class="btn btn-default" value="Submit" />
+				<input id="btn-contact-submit" type="reset" class="btn btn-default" value="Cancel" />
+			</form>
+		</div>
 	</div>
-	<hr />
-</div>
+	
+	<div class="row"> <hr /> </div>
 
+	<div role="tabpanel">
+		<ul class="nav nav-tabs" role="tablist">
+			<li class="active"><a href="#down" aria-controls="down" role="tab" data-toggle="tab">Download Empty Questionnaire</a></li>
+			<li><a href="#compile" aria-controls="home" role="tab" data-toggle="tab">Compile Questionnaire Online</a></li>
+		</ul>
+		<div class="tab-content">
+			<div role="tabpanel" class="tab-pane active" id="down">
+				<div class="row">
+					<div class="col-xs-12 text-center">
+						<br /><br /><br />
+						<button class="btn btn-default btn-lg" id="btn-download-precompile">Download PDF</button>
+						<br /><br /><br /><br /><br />
+					</div>
+				</div>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="compile">
+				<div class="row">
+					<div class="col-xs-12">
+						<div id="pills-quest">&nbsp;
+							<!-- FILLED BY JS -->
+						</div>
+					</div>
+				</div>
+				<div class="row">
+				
+					<hr />
 
-<!-- FENIX Metadata Editor-->
-<div id="metadataEditorContainer">
-	<!-- FILLED BY JS -->
+					<div class="col-xs-12">
+						<h3>Download Compiled Questionnaire</h3>
+						<button class="btn btn-default btn-lg" id="btn-download-precompile">Download PDF</button>
+						<br /><br /><br /><br /><br />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 </div>
 
 <div class="container">
