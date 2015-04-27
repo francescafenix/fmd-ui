@@ -49,8 +49,9 @@ require([
     require([
     	'jquery','underscore','handlebars','amplify','jsoneditor',
 
-        'fx-menu/start',
         'submodules/fenix-ui-common/js/AuthManager',
+
+        'fx-menu/start',
 		'config/fenix-ui-menu',
 
 		'text!submodules/fenix-ui-common/html/pills.html',		
@@ -60,18 +61,18 @@ require([
 
         'domready!'
     ], function ($, _, Handlebars, Amplify, JsonEditor,
-    	TopMenu, AuthManager, menuConfig,
+    	AuthManager, TopMenu, topMenuConf,
     	tmplPills,
     	Config,
     	Quests
     ) {
 
-    	menuConfig.active = 'manage';
+    	topMenuConf.active = 'manage';
 
-		var menuConfigAuth = _.extend({}, menuConfig, {
+		var topMenuConfAuth = _.extend(topMenuConf, {
 				hiddens: ['login']
 			}),
-			menuConfigPub = _.extend({}, menuConfig, {
+			topMenuConfPub = _.extend(topMenuConf, {
 				hiddens: ['manage','logout']
 			});
 
@@ -85,7 +86,7 @@ require([
 				}
 			});
 
-		topMenu = new TopMenu( authMan.isLogged() ? menuConfigAuth : menuConfigPub );
+		topMenu = new TopMenu( authMan.isLogged() ? topMenuConfAuth : topMenuConfPub );
 
     	tmplPills = Handlebars.compile(tmplPills);
 
