@@ -11,7 +11,6 @@ require([
     Compiler.resolve([menuConfig], {
         placeholders: {
         	FENIX_CDN: "//fenixapps.fao.org/repository"
-        	//FENIX_NLS: "../../../nls" //used by metadata editor
         },
         config: {
         	i18n: {
@@ -46,51 +45,31 @@ require([
     });
 
     // Bootstrap the application
-    require([
-    	'jquery','underscore','handlebars','jsoneditor',
+	require([
+		'jquery','underscore','handlebars','jsoneditor',
 
-        'submodules/fenix-ui-common/js/AuthManager',
-
-        'fx-menu/start',
-		'config/fenix-ui-menu',
+		'js/renderAuthMenu',
 
 		'text!submodules/fenix-ui-common/html/pills.html',		
 
-        'config/services',
+		'config/services',
 		'i18n!nls/questions',
 
-        'domready!'
+		'domready!'
     ], function ($, _, Handlebars, JsonEditor,
     	
-    	AuthManager, Menu, MenuConf,
+    	//AuthManager, Menu, menuConf,
+
+    	renderAuthMenu,
 
     	tmplPills,
     	Config,
     	Quests
     ) {
 
-		//AUTH & TOP MENU
-		MenuConf.active = 'manage';
-
-		var MenuConfAuth = _.extend({}, MenuConf, {
-				hiddens: ['login']
-			}),
-			MenuConfPub = _.extend({}, MenuConf, {
-				hiddens: ['manage','logout']
-			});
-
-		var auth = new AuthManager({
-				onLogin: function(user) {
-					menu.refresh(MenuConfAuth);
-				},
-				onLogout: function() {
-					menu.refresh(MenuConfPub);
-				}
-			}),
-			menu = new Menu( auth.isLogged() ? MenuConfAuth : MenuConfPub );
+    	renderAuthMenu('manage');
 
 		//PAGE LOGIC
-
 		var activeSection = 'cat1',
 			questions = _.compact(_.map(Quests, function(title, key) {
 			if(key.match(/^cat/))

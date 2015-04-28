@@ -43,55 +43,19 @@ require(["submodules/fenix-ui-menu/js/paths",
 	require([
     	'jquery','underscore','handlebars','amplify',
 
-        'fx-menu/start',
-        'submodules/fenix-ui-common/js/AuthManager',
+		'js/renderAuthMenu',
+
         'config/services',
 		
 		'domready!'
-	], function($, _, Handlebars, Amplify,
-    	TopMenu, AuthManager,
+	], function($, _, Handlebars, amplify,
+
+    	renderAuthMenu,
+    	
     	Config
 		) {
 
-
-        var authUser = amplify.store.sessionStorage('afo.security.user'),
-            menuUrl,
-            publicMenuConfig =  'config/fenix-ui-menu.json',
-            authMenuConfig = 'config/fenix-ui-menu-auth.json';
-
-        authUser ? menuUrl = authMenuConfig : menuUrl = publicMenuConfig;
-
-        var topMenu = new TopMenu({
-            active: 'home',
-            url: menuUrl,
-            className : 'fx-top-menu',
-            breadcrumb : {
-                active : true,
-                container : ".fx-menu-breadcrumb",
-                showHome : true
-            }
-        });
-        
-        new AuthManager();
-    	amplify.subscribe('fx.auth.login', function (user) {
-            refreshMenu(authMenuConfig);
-        });
-        amplify.subscribe('fx.auth.logout', function () {
-            console.warn("Event logout intercepted");
-            refreshMenu(publicMenuConfig);
-        });
-        function refreshMenu(url) {
-            topMenu.refresh({
-                active: 'home',
-                url: url,
-                className : 'fx-top-menu',
-                breadcrumb : {
-                    active : true,
-                    container : "#breadcumb_container",
-                    showHome : true
-                }
-            })
-        }
+		renderAuthMenu('home');
         
 	});
 

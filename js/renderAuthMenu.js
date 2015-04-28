@@ -1,7 +1,7 @@
 define(['underscore',
-    '../submodules/fenix-ui-common/js/AuthManager',
-    '../fx-menu/start',
-	'../config/fenix-ui-menu'
+    'submodules/fenix-ui-common/js/AuthManager',
+    'fx-menu/start',
+	'config/fenix-ui-menu'
 ], function (_,	AuthManager, Menu, menuConf) {
 
 	return function(menuId) {
@@ -12,7 +12,7 @@ define(['underscore',
 				hiddens: ['login']
 			}),
 			menuConfPub = _.extend({}, menuConf, {
-				hiddens: [menuId,'logout']
+				hiddens: ['manage','logout']
 			});
 
 		var auth = new AuthManager({
@@ -24,7 +24,7 @@ define(['underscore',
 				}
 			}),
 			menu = new Menu( auth.isLogged() ? menuConfAuth : menuConfPub );
-		
+
 		return {
 			auth: auth,
 			menu: menu
