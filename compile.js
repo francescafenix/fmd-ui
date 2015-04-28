@@ -49,18 +49,20 @@ require([
 
     // Bootstrap the application
 	require([
-		'jquery','underscore','bootstrap','handlebars','jsoneditor',
+		'jquery','underscore','bootstrap','handlebars',
 
 		'js/renderAuthMenu',
+		'js/renderForm',
 
 		'text!submodules/fenix-ui-common/html/pills.html',
 		'config/services',
 		'i18n!nls/questions',
 
 		'domready!'
-    ], function ($, _, bootstrap, Handlebars, JSONEditor,
+    ], function ($, _, bootstrap, Handlebars,
     	
     	renderAuthMenu,
+    	renderForm,
 
     	tmplPills,
     	Config,
@@ -68,24 +70,8 @@ require([
     ) {
 
     	renderAuthMenu('compile');
-
-		function dirname(path) {
-			return path.replace(/\\/g,'/').replace(/\/[^\/]*$/, '');;
-		}
-
-		//CONTACT FORM
-		//JSONEditor.defaults.language = 'en';		
-		JSONEditor.defaults.options.ajax = true;
-		JSONEditor.defaults.options.theme = 'bootstrap3';
-		JSONEditor.defaults.options.disable_collapse = true;
-		JSONEditor.defaults.options.disable_edit_json = true;
-		JSONEditor.defaults.options.disable_properties = true;
-
-		var editor = new JSONEditor($("#form-contact")[0], {
-				schema: {
-					$ref: dirname(location.href)+'/json/contact.json',
-				}
-			});
+		
+		renderForm('#form-contact', 'json/schema.contact.json');
 
 /*		editor.on("submit",  function() {
 		  console.log('submit',arguments);
