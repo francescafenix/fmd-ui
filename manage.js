@@ -47,7 +47,7 @@ require([
 
     // Bootstrap the application
     require([
-    	'jquery','underscore','handlebars','amplify','jsoneditor',
+    	'jquery','underscore','handlebars','jsoneditor',
 
         'submodules/fenix-ui-common/js/AuthManager',
 
@@ -60,38 +60,36 @@ require([
 		'i18n!nls/questions',
 
         'domready!'
-    ], function ($, _, Handlebars, Amplify, JsonEditor,
-    	AuthManager, TopMenu, TopMenuConf,
+    ], function ($, _, Handlebars, JsonEditor,
+    	
+    	AuthManager, Menu, MenuConf,
+
     	tmplPills,
     	Config,
     	Quests
     ) {
 
-    	TopMenuConf.active = 'manage';
+		//AUTH & TOP MENU
+		MenuConf.active = 'manage';
 
-		var TopMenuConfAuth = _.extend({}, TopMenuConf, {
+		var MenuConfAuth = _.extend({}, MenuConf, {
 				hiddens: ['login']
 			}),
-			TopMenuConfPub = _.extend({}, TopMenuConf, {
+			MenuConfPub = _.extend({}, MenuConf, {
 				hiddens: ['manage','logout']
 			});
 
-		var topMenu,
-			authMan = new AuthManager({
+		var auth = new AuthManager({
 				onLogin: function(user) {
-					topMenu.refresh(TopMenuConfAuth);
+					menu.refresh(MenuConfAuth);
 				},
 				onLogout: function() {
-					topMenu.refresh(TopMenuConfPub);
+					menu.refresh(MenuConfPub);
 				}
-			});
+			}),
+			menu = new Menu( auth.isLogged() ? MenuConfAuth : MenuConfPub );
 
-		topMenu = new TopMenu( authMan.isLogged() ? TopMenuConfAuth : TopMenuConfPub );
-
-
-//PAGE LOGIC
-
-    	tmplPills = Handlebars.compile(tmplPills);
+		//PAGE LOGIC
 
 		var activeSection = 'cat1',
 			questions = _.compact(_.map(Quests, function(title, key) {
@@ -104,8 +102,7 @@ require([
 			};
         }));
 
-
-		$('#pills-quest').html(tmplPills({
+		$('#pills-quest').html(Handlebars.compile(tmplPills)({
 			items: questions
 		}) );
 
