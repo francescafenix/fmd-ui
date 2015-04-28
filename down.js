@@ -58,7 +58,7 @@ require(["submodules/fenix-ui-menu/js/paths",
     	Config
 		) {
 
-		renderAuthMenu('view');
+		renderAuthMenu('down');
 
 
         

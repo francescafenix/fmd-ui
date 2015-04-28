@@ -12,7 +12,7 @@ define(['underscore',
 				hiddens: ['login']
 			}),
 			menuConfPub = _.extend({}, menuConf, {
-				hiddens: ['manage','logout']
+				hiddens: ['view','compile','logout']
 			});
 
 		var auth = new AuthManager({

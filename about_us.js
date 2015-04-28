@@ -9,8 +9,7 @@ require(["submodules/fenix-ui-menu/js/paths",
 
     Compiler.resolve([menuConfig], {
         placeholders: {
-        	FENIX_CDN: "//fenixapps.fao.org/repository",
-        	//FENIX_NLS: "../../../nls" //used by metadata editor
+        	FENIX_CDN: "//fenixapps.fao.org/repository"
         },
         config: {
         	i18n: {
@@ -23,7 +22,7 @@ require(["submodules/fenix-ui-menu/js/paths",
 				jquery:    "{FENIX_CDN}/js/jquery/2.1.1/jquery.min",
 				amplify:   "{FENIX_CDN}/js/amplify/1.1.2/amplify.min",
 				handlebars:"{FENIX_CDN}/js/handlebars/2.0.0/handlebars",
-				underscore:"{FENIX_CDN}/js/underscore/1.7.0/underscore.min"
+				underscore:"{FENIX_CDN}/js/underscore/1.8.0/underscore.min"
             },
             shim: {
                 underscore: {

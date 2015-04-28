@@ -23,7 +23,7 @@ require([
             config: {
                 locale: 'en',
                 paths: {
-                    underscore: "{FENIX_CDN}/js/underscore/1.7.0/underscore.min",
+                    underscore: "{FENIX_CDN}/js/underscore/1.8.0/underscore.min",
                     backbone:   "{FENIX_CDN}/js/backbone/1.1.2/backbone.min",
                     handlebars: "{FENIX_CDN}/js/handlebars/2.0.0/handlebars",
                     amplify:    "{FENIX_CDN}/js/amplify/1.1.2/amplify.min",

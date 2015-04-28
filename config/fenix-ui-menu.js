@@ -53,6 +53,16 @@ define({
 			},
 			{
 				"attrs": {
+					"id": "down"
+				},
+				"target": "down.html",
+				"label": {
+					"EN": "Download Questionnaire",
+					"FR": ""
+				}
+			},				
+			{
+				"attrs": {
 					"id": "view"
 				},
 				"target": "view.html",
@@ -60,12 +70,12 @@ define({
 					"EN": "View Questionnaires",
 					"FR": ""
 				}
-			},
+			},		
 			{
 				"attrs": {
-					"id": "manage"
+					"id": "compile"
 				},
-				"target": "manage.html",
+				"target": "compile.html",
 				"label": {
 					"EN": "Compile Questionnaire",
 					"FR": ""
