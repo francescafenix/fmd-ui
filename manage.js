@@ -36,7 +36,7 @@ require([
                 },
                 amplify: {
                     deps: ['jquery'],
-                    exports: 'amplifyjs'
+                    exports: 'amplify'
                 },
                 jsoneditor: {
 	                deps: ['jquery', 'bootstrap']
@@ -61,32 +61,35 @@ require([
 
         'domready!'
     ], function ($, _, Handlebars, Amplify, JsonEditor,
-    	AuthManager, TopMenu, topMenuConf,
+    	AuthManager, TopMenu, TopMenuConf,
     	tmplPills,
     	Config,
     	Quests
     ) {
 
-    	topMenuConf.active = 'manage';
+    	TopMenuConf.active = 'manage';
 
-		var topMenuConfAuth = _.extend(topMenuConf, {
+		var TopMenuConfAuth = _.extend({}, TopMenuConf, {
 				hiddens: ['login']
 			}),
-			topMenuConfPub = _.extend(topMenuConf, {
+			TopMenuConfPub = _.extend({}, TopMenuConf, {
 				hiddens: ['manage','logout']
 			});
 
 		var topMenu,
 			authMan = new AuthManager({
 				onLogin: function(user) {
-					topMenu.refresh(menuConfigAuth);
+					topMenu.refresh(TopMenuConfAuth);
 				},
 				onLogout: function() {
-					topMenu.refresh(menuConfigPub);
+					topMenu.refresh(TopMenuConfPub);
 				}
 			});
 
-		topMenu = new TopMenu( authMan.isLogged() ? topMenuConfAuth : topMenuConfPub );
+		topMenu = new TopMenu( authMan.isLogged() ? TopMenuConfAuth : TopMenuConfPub );
+
+
+//PAGE LOGIC
 
     	tmplPills = Handlebars.compile(tmplPills);
 

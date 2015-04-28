@@ -43,7 +43,7 @@ require([
                     },
                     amplify: {
                         deps: ['jquery'],
-                        exports: 'amplifyjs'
+                        exports: 'amplify'
                     }
                 }
             }

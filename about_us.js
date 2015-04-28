@@ -34,7 +34,7 @@ require(["submodules/fenix-ui-menu/js/paths",
                 },
                 amplify: {
                     deps: ['jquery'],
-                    exports: 'amplifyjs'
+                    exports: 'amplify'
                 }
             }
         }
