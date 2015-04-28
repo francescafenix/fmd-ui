@@ -69,26 +69,28 @@ require([
 
     	renderAuthMenu('compile');
 
+		function dirname(path) {
+			return path.replace(/\\/g,'/').replace(/\/[^\/]*$/, '');;
+		}
 
 		//CONTACT FORM
-/*
+		//JSONEditor.defaults.language = 'en';		
+		JSONEditor.defaults.options.ajax = true;
 		JSONEditor.defaults.options.theme = 'bootstrap3';
+		JSONEditor.defaults.options.disable_collapse = true;
+		JSONEditor.defaults.options.disable_edit_json = true;
+		JSONEditor.defaults.options.disable_properties = true;
 
-		// Initialize the editor
 		var editor = new JSONEditor($("#form-contact")[0], {
-		  schema: {
-		      type: "object",
-		      properties: {
-		          name: { "type": "string" }
-		      }
-		  }
-		});
+				schema: {
+					$ref: dirname(location.href)+'/json/contact.json',
+				}
+			});
 
-		// Listen for changes
-		editor.on("change",  function() {
-		  console.log('change',arguments);
-		});
-*/
+/*		editor.on("submit",  function() {
+		  console.log('submit',arguments);
+		});*/
+
 		/*
 		$('#form-contact').on('submit', function(e) {
 			e.preventDefault();
