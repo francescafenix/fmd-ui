@@ -12,17 +12,22 @@ define([
 	'require','jquery','underscore','jsoneditor'
 ], function (require, $, _, JSONEditor) {
 
-	function renderForm(target, schemaUrl, opts) {
+	function renderForm(target, schema, opts) {
 
 		this.opts = _.defaults(opts || {}, {
 			theme: 'bootstrap3',
+			template: 'handlebars',
+			//TODO langugaues using module nls/jsoneditor_errors.js
 			disable_collapse: true,
 			disable_edit_json: true,
 			disable_properties: true,
+			
+			//disable_array_add: true,
+			//disable_array_delete: true,
+			disable_array_reorder: true,
+
 			ajax: true,
-			schema: {
-				$ref: require.toUrl(schemaUrl)
-			}
+			schema: _.isString(schema) ? {$ref: require.toUrl(schema)} : schema
 		});
 		
 		this.target = (target instanceof jQuery) ? target : $(target);

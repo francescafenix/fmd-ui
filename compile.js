@@ -71,7 +71,33 @@ require([
 
     	renderAuthMenu('compile');
 		
-		renderForm('#form-contact', 'json/schema.contact.json');
+		//CONTACT FORM
+		renderForm('#form-contact', 'json/contact.json');
+
+		//SECTIONS
+		var questions = _.compact(_.map(Quests, function(title, key) {
+				if(key.match(/^cat/))
+					return {
+						id: key,
+						title: title,
+						html: '',
+						active: false
+					};
+	        }));
+
+		$('#pills-quest').html( Handlebars.compile(tmplPills)({
+			items: questions
+		}) )
+		.find('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+			var id = $(e.target).data('id');
+
+			require(['json/'+ id ], function(schema) {
+				renderForm('#'+ id, schema);
+			});
+
+		});
+
+
 
 /*		editor.on("submit",  function() {
 		  console.log('submit',arguments);
@@ -103,28 +129,6 @@ require([
 
 			$(this).replaceWith( Handlebars.compile('<ul>{{#each this}}<li>{{name}}: {{value}}</li>{{/each}}</ul>')(adata) );
         });*/
-
-		//SECTIONS
-		var activeSection = 'cat1',
-			questions = _.compact(_.map(Quests, function(title, key) {
-				if(key.match(/^cat/))
-					return {
-						id: key,
-						title: title,
-						html: '',
-						active: activeSection===key
-					};
-	        }));
-
-		$('#pills-quest').html( Handlebars.compile(tmplPills)({
-			items: questions
-		}) )
-		.find('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-			//e.target // newly activated tab
-			//e.relatedTarget // previous active tab
-
-			console.log( $(e.target).data('id') );
-		});
 
     });
 });
