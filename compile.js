@@ -88,7 +88,7 @@ require([
 		$('#pills-quest').html( Handlebars.compile(tmplPills)({
 			items: questions
 		}) )
-		.find('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+		.find('a[data-toggle="tab"]').one('shown.bs.tab', function (e) {
 			var id = $(e.target).data('id');
 
 			require(['json/'+ id ], function(schema) {
