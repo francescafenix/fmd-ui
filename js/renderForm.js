@@ -1,3 +1,13 @@
+/*
+
+USAGE:
+	renderForm('#form-contact', 'json/schema.contact.json');
+
+	//new dom element
+	var form$ = $('<form>').prependTo('body');
+	renderForm(form$, 'json/schema.contact.json');
+
+*/
 define([
 	'jquery','underscore','jsoneditor'
 ], function ($, _, JSONEditor) {
@@ -25,13 +35,6 @@ define([
 
 		this.editor = new JSONEditor(this.target[0], this.opts);
 	};
-	//CONTACT FORM
-	//JSONEditor.defaults.language = 'en';		
-	/*JSONEditor.defaults.options.ajax = true;
-	JSONEditor.defaults.options.theme = 'bootstrap3';
-	JSONEditor.defaults.options.disable_collapse = true;
-	JSONEditor.defaults.options.disable_edit_json = true;
-	JSONEditor.defaults.options.disable_properties = true;*/
 
 	return function (target, schemaUrl, opts) {
 		return new renderForm(target, schemaUrl, opts);
