@@ -9,12 +9,8 @@ USAGE:
 
 */
 define([
-	'jquery','underscore','jsoneditor'
-], function ($, _, JSONEditor) {
-
-	function dirname(path) {
-		return path.replace(/\\/g,'/').replace(/\/[^\/]*$/, '');;
-	}
+	'require','jquery','underscore','jsoneditor'
+], function (require, $, _, JSONEditor) {
 
 	function renderForm(target, schemaUrl, opts) {
 
@@ -23,13 +19,11 @@ define([
 			disable_collapse: true,
 			disable_edit_json: true,
 			disable_properties: true,
-			ajax: true,			
+			ajax: true,
 			schema: {
-				$ref: dirname(location.href)+'/'+schemaUrl
+				$ref: require.toUrl(schemaUrl)
 			}
 		});
-
-		console.log(this.opts);
 		
 		this.target = (target instanceof jQuery) ? target : $(target);
 
