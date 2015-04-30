@@ -1,4 +1,4 @@
-define(['../i18n!nls/questions'], function(Quests) {
+define(['i18n!nls/questions'], function(Quests) {
 	return {
 		"type": "object",
 		"title": Quests.cat1,
@@ -19,6 +19,7 @@ define(['../i18n!nls/questions'], function(Quests) {
 				"title": Quests['ask1.1'],
 				"type": "array",
 				"minItems": 1,
+				"maxItems": 5,
 				"items": {
 					"type": "string",
 					"title": " ",
