@@ -26,6 +26,7 @@ define([
 			disable_edit_json: true,
 			disable_properties: true,
 			disable_array_reorder: true,
+			//required_by_default: true,
 
 			ajax: true,
 			schema: _.isString(schema) ? {$ref: require.toUrl(schema)} : schema
@@ -33,18 +34,22 @@ define([
 
 		if(!_.isUndefined(opts.editable))
 			this.opts = _.extend(this.opts, {
-				editable: opts.editable,
-				disable_collapse: !opts.editable,
-				disable_edit_json: !opts.editable,
-				disable_properties: !opts.editable,
-				disable_array_reorder: !opts.editable
+				editable:              opts.editable,
+				disable_collapse:     !opts.editable,
+				disable_edit_json:    !opts.editable,
+				disable_properties:   !opts.editable,
+				disable_array_reorder:!opts.editable
 			});
-
-		console.log('OPTS',this.opts);
 		
 		this.target = (target instanceof jQuery) ? target : $(target);
 
 		this.editor = new JSONEditor(this.target[0], this.opts);
+		
+/*		var that = this;
+		this.editor.on('ready', function() {
+			if(!that.editable)
+				that.editor.disable();
+		});*/
 	};
 
 	renderForm.prototype.setValues = function(data) {
