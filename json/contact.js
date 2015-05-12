@@ -1,4 +1,4 @@
-{
+define({
 	"type": "object",
 	"title": "Compiler Information",
 	"properties": {
@@ -20,4 +20,4 @@
 			"title": "Contact Information"
 		}
 	}
-}
+});

@@ -1,4 +1,4 @@
-{
+define({
     "id": "http://json-schema.org/draft-04/schema#",
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "Core schema meta-schema",
@@ -147,4 +147,4 @@
         "exclusiveMinimum": [ "minimum" ]
     },
     "default": {}
-}
+});

@@ -6,17 +6,17 @@ require([
 	'submodules/fenix-ui-menu/js/paths'
 ], function (Compiler, menuConfig) {
 
-    menuConfig.baseUrl = 'submodules/fenix-ui-menu/js';
+	menuConfig.baseUrl = 'submodules/fenix-ui-menu/js';
 
-    Compiler.resolve([menuConfig], {
-        placeholders: {
-        	FENIX_CDN: "//fenixapps.fao.org/repository"
-        },
-        config: {
-        	i18n: {
-            	locale: 'en'
-            },
-            paths: {
+	Compiler.resolve([menuConfig], {
+	    placeholders: {
+	    	FENIX_CDN: "//fenixapps.fao.org/repository"
+	    },
+	    config: {
+	    	i18n: {
+	        	locale: 'en'
+	        },
+	        paths: {
 				text:      "{FENIX_CDN}/js/requirejs/plugins/text/2.0.12/text",
 				i18n:      "{FENIX_CDN}/js/requirejs/plugins/i18n/2.0.4/i18n",
 				domready:  "{FENIX_CDN}/js/requirejs/plugins/domready/2.0.1/domReady",
@@ -25,29 +25,29 @@ require([
 				amplify:   "{FENIX_CDN}/js/amplify/1.1.2/amplify.min",
 				handlebars:"{FENIX_CDN}/js/handlebars/2.0.0/handlebars",
 				underscore:"{FENIX_CDN}/js/underscore/1.8.0/underscore.min",
-				jsoneditor:"{FENIX_CDN}/js/json-editor/0.7.17/jsoneditor.min"
-            },
-            shim: {
-            	bootstrap:['jquery'],
-                underscore: {
-                    exports: '_'
-                },
-                handlebars: {
-                    exports: 'Handlebars'
-                },
-                amplify: {
-                    deps: ['jquery'],
-                    exports: 'amplify'
-                },
-                jsoneditor: {
+				jsoneditor:"{FENIX_CDN}/js/json-editor/0.7.17/jsoneditor"
+	        },
+	        shim: {
+	        	bootstrap:['jquery'],
+	            underscore: {
+	                exports: '_'
+	            },
+	            handlebars: {
+	                exports: 'Handlebars'
+	            },
+	            amplify: {
+	                deps: ['jquery'],
+	                exports: 'amplify'
+	            },
+	            jsoneditor: {
 	                deps: ['jquery', 'bootstrap'],
 	                exports: 'JSONEditor'
 	            }
-            }
-        }
-    });
+	        }
+	    }
+	});
 
-    // Bootstrap the application
+	// Bootstrap the application
 	require([
 		'jquery','underscore','bootstrap','handlebars',
 
@@ -59,20 +59,23 @@ require([
 		'i18n!nls/questions',
 
 		'domready!'
-    ], function ($, _, bootstrap, Handlebars,
-    	
-    	renderAuthMenu,
-    	renderForm,
-
-    	tmplPills,
-    	Config,
-    	Quests
-    ) {
-
-    	renderAuthMenu('editor');
+	], function ($, _, bootstrap, Handlebars,
 		
-		//CONTACT FORM
-		renderForm('#form-schema', 'json/schema4.json');
+		renderAuthMenu,
+		renderForm,
+
+		tmplPills,
+		Config,
+		Quests
+	) {
+
+		renderAuthMenu('editor');
+
+		require(['json/schema_fmd','json/cat1'], function (schema, values) {
+
+			renderForm('#form-schema', schema, {editable: false}).setValues(values);
+
+		});
 
 
     });

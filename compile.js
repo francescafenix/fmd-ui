@@ -54,6 +54,8 @@ require([
 		'js/renderAuthMenu',
 		'js/renderForm',
 
+		'json/contact',
+
 		'text!submodules/fenix-ui-common/html/pills.html',
 		'config/services',
 		'i18n!nls/questions',
@@ -63,6 +65,7 @@ require([
     	
     	renderAuthMenu,
     	renderForm,
+    	schemaContact,
 
     	tmplPills,
     	Config,
@@ -72,7 +75,7 @@ require([
     	renderAuthMenu('compile');
 		
 		//CONTACT FORM
-		renderForm('#form-contact', 'json/contact.json');
+		renderForm('#form-contact', schemaContact);
 
 		//SECTIONS
 		var questions = _.compact(_.map(Quests, function(title, key) {

@@ -60,7 +60,7 @@ define({
 					"EN": "Download Questionnaire",
 					"FR": ""
 				}
-			},				
+			},
 			{
 				"attrs": {
 					"id": "view"
@@ -70,7 +70,7 @@ define({
 					"EN": "View Questionnaires",
 					"FR": ""
 				}
-			},		
+			},
 			{
 				"attrs": {
 					"id": "compile"
@@ -80,7 +80,18 @@ define({
 					"EN": "Compile Questionnaire",
 					"FR": ""
 				}
+			},
+			{
+				"attrs": {
+					"id": "editor"
+				},
+				"target": "editor.html",
+				"label": {
+					"EN": "Edit Questionnaire",
+					"FR": ""
+				}
 			}
+
 		],
 		"rightItems": [
 			{
