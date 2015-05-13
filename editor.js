@@ -26,8 +26,10 @@ require([
 				handlebars:"{FENIX_CDN}/js/handlebars/2.0.0/handlebars",
 				underscore:"{FENIX_CDN}/js/underscore/1.8.0/underscore.min",
 				jsoneditor:"{FENIX_CDN}/js/json-editor/0.7.17/jsoneditor"
+				//jsoneditor:"submodules/json-editor/dist/jsoneditor"
 	        },
 	        shim: {
+
 	        	bootstrap:['jquery'],
 	            underscore: {
 	                exports: '_'

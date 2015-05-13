@@ -10,3 +10,9 @@
 [submodule "submodules/fenix-ui-common"]
 	path = submodules/fenix-ui-common
 	url = https://github.com/FENIX-Platform/fenix-ui-common
+[submodule "submodules/json-editor"]
+	path = submodules/json-editor
+	url = https://github.com/stefanocudini/json-editor.git
+[submodule "submodules/i18n"]
+	path = submodules/i18n
+	url = https://github.com/stefanocudini/i18n.git

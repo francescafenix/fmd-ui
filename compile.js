@@ -78,15 +78,17 @@ require([
 		renderForm('#form-contact', schemaContact);
 
 		//SECTIONS
-		var questions = _.compact(_.map(Quests, function(title, key) {
-				if(key.match(/^cat/))
+		var questions = _.map(_.range(1,17), function(i) {
+					
+					var id = 'cat'+i;
+
 					return {
-						id: key,
-						title: title,
+						id: id,
+						title: Quests[id],
 						html: '',
 						active: false
 					};
-	        }));
+	        });
 
 		$('#pills-quest').html( Handlebars.compile(tmplPills)({
 			items: questions
@@ -95,7 +97,13 @@ require([
 			var id = $(e.target).data('id');
 
 			require(['json/'+ id ], function(schema) {
+				
 				renderForm('#'+ id, schema);
+
+			}, function (err) {
+
+			    $('#'+id).html('<div class="alert alert-warning">Question '+err.requireModules+' not found</div>');
+			    
 			});
 
 		});
