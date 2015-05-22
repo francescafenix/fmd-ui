@@ -84,7 +84,7 @@ require([
 
 					return {
 						id: id,
-						title: Quests[id],
+						title: i+') '+Quests[id],
 						html: '',
 						active: false
 					};
