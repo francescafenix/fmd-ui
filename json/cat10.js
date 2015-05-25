@@ -55,16 +55,16 @@ define(['i18n!nls/questions'], function(Quests) {
             },
             "ask23": {
                 "title": Quests['ask23'],
-                "type": "string",
-                "uniqueItems": false,
-                "format": "select",
-                "enum": [
-                    "less than 5%",
-                    "between 5% and 10%",
-                    "between 11 and 25%",
-                    "more than 25%",
-                    "not sure"
-                ]
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                	"type": "string",
+                	"enum": [ "less than 5%",
+	                    "between 5% and 10%",
+	                    "between 11 and 25%",
+	                    "more than 25%",
+	                    "not sure"]
+                }
             }
 
         }
