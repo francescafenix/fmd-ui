@@ -57,6 +57,8 @@ require([
 		'json/contact',
 
 		'text!submodules/fenix-ui-common/html/pills.html',
+		'text!html/formError.html',
+
 		'config/services',
 		'i18n!nls/questions',
 
@@ -65,9 +67,12 @@ require([
     	
     	renderAuthMenu,
     	renderForm,
+
     	schemaContact,
 
     	tmplPills,
+		tmplFormError,
+
     	Config,
     	Quests
     ) {
@@ -102,7 +107,7 @@ require([
 
 			}, function (err) {
 
-			    $('#'+id).html('<div class="alert alert-warning">Question '+err.requireModules+' not found</div>');
+			    $('#'+id).html( Handlebars.compile(tmplFormError )({id: id }) );
 			    
 			});
 
