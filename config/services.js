@@ -3,6 +3,8 @@ define({
   "wdsUrl": "http://faostat3.fao.org/wds/rest/table/json",
   "wdsUrlExportCsv": "http://faostat3.fao.org/wds/rest/exporter/streamcsv",
 
+  "wds5Url": "http://fenixapps2.fao.org/wds_5",
+
   "wmsUrl": "http://fenixapps2.fao.org/geoserver-demo",
   "sldUrl": "http://fenixapps2.fao.org/geoservices/CSS2SLD",
  
