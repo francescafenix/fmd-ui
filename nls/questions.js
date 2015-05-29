@@ -10,7 +10,35 @@ define({
 		"cat2": "LIVESTOCK POPULATION",
 
 			"ask2":       "2) Please, provide information on population of FMD-susceptible livestock and wild life in your country? (Multiple answer, fill in the boxes)",
-
+			"ask2.1": "2.1) Domestic Species",
++			"ask2.1.1": "Cattle",
++			"ask2.1.2": "Buffalo",
++			"ask2.1.3": "Sheep",
++			"ask2.1.4": "Goat",
++			"ask2.1.5": "Pigs",
++			"ask2.1.6": "Other Domestic Species ",
++			
++			"ask2.2": "2.2) FMD susceptible Wild Life species",
++			"ask2.2.1": 	"Buffalo",
+					"ask2.2.1.1": "Presence",
+					"ask2.2.1.2": "Approximate population number (if known)",
++			"ask2.2.2":	"Antelope",
+					"ask2.2.2.1": "Presence",
+					"ask2.2.2.2": "Approximate population number (if known)",
++			"ask2.2.3":	"Deer",
+					"ask2.2.3.1": "Presence",
+					"ask2.2.3.2": "Approximate population number (if known)",
++			"ask2.2.4":	"Wild boar",
+					"ask2.2.4.1": "Presence",
+					"ask2.2.4.2": "Approximate population number (if known)",
++			"ask2.2.5":	"Feral pigs",
+					"ask2.2.5.1": "Presence",
+					"ask2.2.5.2": "Approximate population number (if known)",
++			"ask2.2.6":     "Other (specify)",
+					"ask2.2.6.1": "Presence",
+					"ask2.2.6.2": "Approximate population number (if known)",
+      
+      
 		"cat3": "FARM REGISTER",
 
 			"ask3":       "3) Is there an official livestock establishment registration system in your country?",
