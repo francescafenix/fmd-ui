@@ -10,7 +10,24 @@ define({
 		"cat2": "LIVESTOCK POPULATION",
 
 			"ask2":       "2) Please, provide information on population of FMD-susceptible livestock and wild life in your country? (Multiple answer, fill in the boxes)",
-
+			"ask2.1": "2.1) Domestic Species",
+			"ask2.1.1": "Cattle",
+			"ask2.1.2": "Buffalo",
+			"ask2.1.3": "Sheep",
+			"ask2.1.4": "Goat",
+			"ask2.1.5": "Pigs",
+			"ask2.1.6": "Other Domestic Species ",
+			
+			"ask2.2": "2.2) FMD susceptible Wild Life species",
+			"ask2.2":
+			"ask2.2":
+			"ask2.2":
+			"ask2.2":
+			"ask2.2":
+			"ask2.2":
+		
+			
+			
 		"cat3": "FARM REGISTER",
 
 			"ask3":       "3) Is there an official livestock establishment registration system in your country?",
